@@ -21,12 +21,9 @@ def procesar(request):
     print(files)
         
     for i in files:
-        print("******************************")
         imagen = i.read()
         img = cv2.imdecode(np.fromstring(imagen, np.uint8), -1)
         vectores.append(Trozos.convertirMatrizAVector(img))
-        print(img)  
-        print("******************************")
         
     matriz = Trozos.crearMatrizDeVectores(vectores)
     
