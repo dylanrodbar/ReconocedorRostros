@@ -1,0 +1,67 @@
+{% extends "header.html" %}
+{% block content %}
+
+		<br>
+		<br>
+        <div class="container">
+		
+		
+		  <form class="well form-horizontal" action='{% url 'reconocedor:procesar' %}' method='POST'  id="contact_form" enctype="multipart/form-data"> {% csrf_token %} 
+<fieldset>
+
+<!-- Form Name -->
+<legend>EigenFaces</legend>
+	<!-- Text input   <input type="file" class="form-control">  -->
+
+	<div class="form-group">
+	  <label class="col-md-2 control-label"></label>
+	  <div class="col-md-6 inputGroupContainer">
+	  
+	 
+			   <div class="fileinput fileinput-new input-group" data-provides="fileinput" >
+				<div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
+				<span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new">Seleccionar Carpeta</span><span class="fileinput-exists">Seleccionar Carpeta</span><input type="file" name="file" webkitdirectory multiple ></span>
+			   </div>
+			 
+			
+	
+	  
+	</div>
+	
+
+	  
+	  <div class="col-md-2" align="center">
+<button type="submit" class="btn btn-info" >Procesar <span class="glyphicon glyphicon-cog"></span></button></a>
+	  </div>
+	
+	</div>  
+	
+
+		
+	<!-- Modal Sucess-->
+	<div class="modal fade" id="Sucess" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+        				<button type="button" class="close" data-dismiss="modal">
+        					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+        				</button>
+        				<h3 class="modal-title" id="modal-login-label">Se proceso correctamente</h3>
+						
+						<p>Para mas informacion revisar el archivo .txt generado</p>
+						
+						
+						
+        			</div>
+        			
+        	
+        			
+      </div>
+      
+    </div>
+  </div>
+		
+		
+{% endblock %}
