@@ -27,7 +27,6 @@ from numpy import matrix
 
 def cargarImagen(direccion):
     vectores = []
-    
     for archivo in os.listdir(direccion): #Se recorren los archivos dentro de la carpeta
         imagen = cv2.imread(os.path.join(direccion, archivo), -1) #Se abre un archivo pmg
         
@@ -56,15 +55,21 @@ def cargarImagen(direccion):
 #  @return vector  vector con los valores de la matriz  
 ##    
 def convertirMatrizAVector(matriz):
+
+
+    
+    if len(matriz) == 1 or len(matriz) == 0:
+        return matriz
+
+    else:    
+        vector = []
         
-    vector = []
-    
-    
-    for i in matriz:
-        for j in i:
-            vector.append(j)
-    
-    return vector
+        
+        for i in matriz:
+            for j in i:
+                vector.append(j)
+        
+        return vector
 
 
 ##
@@ -82,18 +87,23 @@ def convertirMatrizAVector(matriz):
 ##
 
 def crearMatrizDeVectores(vectores):
-    matriz = []
-    
-    tamanio = len(vectores)
-    tamanioV = len(vectores[0])
-    
-    for i in range(tamanioV):
-        matriz.append([])
-        for j in range(tamanio):
-            matriz[i].append(vectores[j][i])
-    
-    
-    return matriz
+
+    if len(vectores) == 1 or len(vectores) == 0:
+        return vectores
+
+    else:
+        matriz = []
+        
+        tamanio = len(vectores)
+        tamanioV = len(vectores[0])
+        
+        for i in range(tamanioV):
+            matriz.append([])
+            for j in range(tamanio):
+                matriz[i].append(vectores[j][i])
+        
+        
+        return matriz
 
 ##
 #  Función la cual calcula la matriz de covarianza de una matriz
@@ -105,10 +115,6 @@ def crearMatrizDeVectores(vectores):
 ## 
 def calcularMatrizCovarianza(matriz):
     mCovarianza = np.cov(matriz)
-    
-    for i in mCovarianza:
-        print(i)
-        break
     
     return mCovarianza
 
@@ -124,12 +130,6 @@ def guardarMatrizDeCovarianza(matriz):
     np.savetxt('MatrizCovarianza.txt', matriz)
     
     
-    ###
-#crearMatrizDeVectores([[[1,2,3], [4,5,6]], [[7,8,9], [10,11,12]], [[13,14,15], [16,17,18]]])
-#cargarImagen('input/s1') 
-#convertirMatrizAVector([[1,2,3],[4,5,6],[7,8,9]])
-#
-
 
 
 ##

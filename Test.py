@@ -6,7 +6,7 @@ class TestMyModule(unittest.TestCase):
     
     
     def test_cargarImagen(self):
-        self.assertEqual(Trozos.cargarImagen('input\s1'), '','No se pudo cargar la imagen')
+        self.assertEqual(Trozos.cargarImagen('input\s1'), None,'No se pudo cargar la imagen')
      
     def test_convertirMatrizAVector(self):
         self.assertEqual(Trozos.convertirMatrizAVector([[1,2,3],[4,5,6]]), [1,2,3,4,5,6])
