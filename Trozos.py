@@ -7,7 +7,23 @@ from numpy import matrix
 
 
 
-########### Primer trozo: lectura de imagenes de una carpeta ###########
+##
+#  Se cargan n imágenes .pmg de dimensiones l * a = p, donde l son la 
+#  cantidad de pixeles de largo y a la cantidad de pixeles de ancho,
+#  de una carpeta especifica. Posteriormente se convierte cada una
+#  en vectores de forma que se guarden en una matriz M de dimensiones
+#  p * n. Por último calcula la matriz de covarianza de la matriz M
+#  y la guarda en un archivo .txt de nombre MatrizCovarianza.txt en
+#  la dirección 'root'.
+#  
+#  <p>
+#  Esta funcion es el metodo principal de la aplicación por lo que
+#  se debe de llamar para iniciar la aplicación.
+#
+#  @param  direccion  la dirección de la carpeta donde se encuentran las imagenes a cargar
+#
+#  @return      
+##
 
 def cargarImagen(direccion):
     vectores = []
@@ -32,7 +48,13 @@ def cargarImagen(direccion):
     
     
     
-    
+##
+#  Se convierte una matriz a vector recorriendo en orden sus filas
+#
+#  @param  matriz  matriz a convertir en vector
+#
+#  @return vector  vector con los valores de la matriz  
+##    
 def convertirMatrizAVector(matriz):
         
     vector = []
@@ -45,8 +67,19 @@ def convertirMatrizAVector(matriz):
     return vector
 
 
-########### Tercer trozo: hacer una matriz con los vectores de la imagen de muestra  ###########
-
+##
+#  Se construye una matriz con los vectores de la imagen de muestra
+#
+#  <p>
+#
+#  Esta función se utiliza con los vectores creados mediante la funcion
+#  convertirMatrizAVector, coloca los vectores de forma vertical en columnas
+#  para facilitar su análisis.
+#
+#  @param  vectores  matriz con los vectores de las imágenes
+#
+#  @return matriz matriz con los vectores en formas de columna   
+##
 
 def crearMatrizDeVectores(vectores):
     matriz = []
@@ -62,7 +95,14 @@ def crearMatrizDeVectores(vectores):
     
     return matriz
 
-########### Cuarto trozo: calcular la matriz de covarianza de la matriz que sale del punto anterior ########### 
+##
+#  Función la cual calcula la matriz de covarianza de una matriz
+#
+#
+#  @param  matriz  matriz de cualquier dimensión
+#
+#  @return mCovarianza matriz de covarianza de la matriz ingresada   
+## 
 def calcularMatrizCovarianza(matriz):
     mCovarianza = np.cov(matriz)
     
@@ -72,7 +112,14 @@ def calcularMatrizCovarianza(matriz):
     
     return mCovarianza
 
-
+##
+#  Guarda una matriz en un archivo txt
+#
+#
+#  @param  matriz  matriz de cualquier dimensión
+#
+#  @return    
+## 
 def guardarMatrizDeCovarianza(matriz):
     np.savetxt('MatrizCovarianza.txt', matriz)
     
