@@ -1,4 +1,4 @@
-import cv2
+##import cv2
 import os
 import numpy as np
 from numpy import matrix
@@ -24,7 +24,7 @@ from numpy import matrix
 #
 #  @return      
 ##
-
+##
 def cargarImagen(direccion):
     vectores = []
     for archivo in os.listdir(direccion): #Se recorren los archivos dentro de la carpeta
@@ -39,11 +39,18 @@ def cargarImagen(direccion):
     
     
     matriz = crearMatrizDeVectores(vectores)
+
+    matriz = np.array(matriz)
+    cara_promedio= cara_prom(matriz)
+
+    diferencias = matriz_diferencias(matriz,cara_promedio)
+
+    eigen = auto_vectores(diferencias)
+
+    diffPrima = np.matmul(np.transpose(eigen[1]),diferencias)
+
+    guardarMatrizTxt(diffPrima)
     
-    
-    mCovarianza = calcularMatrizCovarianza(matriz)
-    
-    guardarMatrizDeCovarianza(mCovarianza)
     
     
     
@@ -126,10 +133,63 @@ def calcularMatrizCovarianza(matriz):
 #
 #  @return    
 ## 
-def guardarMatrizDeCovarianza(matriz):
-    np.savetxt('MatrizCovarianza.txt', matriz)
+def guardarMatrizTxt(matriz):
+    np.savetxt('Matriz.txt', matriz)
     
     
+##
+#  Calcula el promedio de los valores de un vector
+#
+#
+#  @param  vectores  matriz con los vectores de entrenamiento del tipo numpy.array
+#
+#  @return prom    promedio de todos los vectores, en este caso "cara promedio"
+## 
+def cara_prom(vectores):
+    prom = []
+    #vectores = np.array(vectores) la matriz de vectores debe ser del tipo numpy.array
+    for i in range(0,len(vectores[0])):
+        vector = vectores[:,i]
+        if(prom==[]):
+            prom = vector
+        else:
+            prom += vector
+    prom = prom / len(vectores[0])
 
+    return prom
 
 ##
+#  Calcula la matriz de diferencias de n vectores de la forma:
+#  di = vi - promedio, donde di es el vector de diferencia i,
+#  vi el vector i y promedio el promedio generado con la funcion
+#  cara_prom.
+#
+#
+#  @param  vectores  matriz con los vectores de entrenamiento del tipo numpy.array
+#  @param  promedio  promedio de todos los vectores
+#
+#  @return diff     la matriz de diferencias
+## 
+def matriz_diferencias(vectores,promedio):
+    diff= []
+    for i in range(0,len(vectores[0])):
+        diff += [vectores[:,i]-promedio]
+    return np.transpose(diff)
+##
+#  Calcula los autovectores de una matriz de covarianza dada una matriz de diferencias
+#
+#
+#  @param  matriz_diferencias  matriz con la diferencia entre los vectores y el promedio
+#
+#  @return [auto_valores,auto_vectores] arreglo con dos posiciones, auto valores y autovectores
+## 
+def auto_vectores(matriz_diferencias):
+    covarianzaV = np.matmul(np.transpose(matriz_diferencias),matriz_diferencias)
+    eigen = np.linalg.eig(covarianzaV)
+    auto_valores = eigen[0]
+    auto_vectoresV = eigen[1]
+    auto_vectores = np.matmul(matriz_diferencias,auto_vectoresV)
+    return [auto_valores,auto_vectores]
+
+
+
