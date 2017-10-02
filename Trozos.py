@@ -24,7 +24,12 @@ from numpy import matrix
 #
 #  @return      
 ##
+<<<<<<< HEAD
 ##
+=======
+
+#####
+>>>>>>> master
 def cargarImagen(direccion):
     vectores = []
     for archivo in os.listdir(direccion): #Se recorren los archivos dentro de la carpeta
