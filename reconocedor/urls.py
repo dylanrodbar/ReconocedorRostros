@@ -5,5 +5,6 @@ from . import views
 urlpatterns = [
     url(r'^reco/$', views.inicio, name='inicio'),
     url(r'^recoProcesar/$', views.procesar, name='procesar'),
+    url(r'^recoReconocer/$', views.procesar, name='reconocer'),
  
 ]

@@ -1,4 +1,4 @@
-##import cv2
+import cv2
 import os
 import numpy as np
 from numpy import matrix
@@ -27,37 +27,40 @@ diffPrima = [] #atributo de la clase de entrenamiento, en el init debería inten
 ##
 #####
 ##
-##def cargarImagen(direccion):
-##    vectores = []
-##    for archivo in os.listdir(direccion): #Se recorren los archivos dentro de la carpeta
-##        imagen = cv2.imread(os.path.join(direccion, archivo), -1) #Se abre un archivo pmg
-##        
-##        
-##        ########### Segundo trozo: convertir la matriz a vector ###########
-##
-##        if imagen is not None: #Si se abre exitosamente (existe)
-##            vectores.append(convertirMatrizAVector(imagen)) #Se pasa la matriz a vector
-##            
-##    
-##    
-##    matriz = crearMatrizDeVectores(vectores)
-##
-##    matriz = np.array(matriz)
-##    cara_promedio= cara_prom(matriz)
-##
-##    diferencias = matriz_diferencias(matriz,cara_promedio)
-##
-##    eigen = auto_vectores(diferencias)
-##    global diffPrima
-##    diffPrima = np.matmul(np.transpose(eigen[1]),diferencias)
-##
-##    guardarMatrizTxt(diffPrima,"autovectores.txt")
-##    global centroides  
-##    centroides=calcular_centroides(diffPrima)
-##
-##    guardarMatrizTxt(centroides,"centroides.txt")
-##    
-##    
+def cargarImagen(files):
+    vectores = []
+    for i in files:
+        imagen = i.read()
+        img = cv2.imdecode(np.fromstring(imagen, np.uint8), -1)
+        vectores.append(convertirMatrizAVector(img))
+        
+    matriz = crearMatrizDeVectores(vectores)
+    
+    
+    #mCovarianza = Trozos.calcularMatrizCovarianza(matriz)
+    
+    #Trozos.guardarMatrizTxt(mCovarianza, "Matriz")
+    matriz = np.array(matriz)
+    cara_promedio= cara_prom(matriz)
+
+    diferencias = matriz_diferencias(matriz,cara_promedio)
+
+    eigen = auto_vectores(diferencias)
+    global diffPrima
+    diffPrima = np.matmul(np.transpose(eigen[1]),diferencias)
+
+    guardarMatrizTxt(diffPrima,"autovectores.txt")
+    global centroides  
+    centroides= calcular_centroides(diffPrima)
+
+    guardarMatrizTxt(centroides,"centroides.txt")
+    
+    print("Reconociendo")
+    print(reconocer("C:\\Users\\user\\Documents\\ProyectoAseguramientoReconocedorRostros\\ReconocedorRostros\\input\\s1\\1.pgm"))
+    
+        
+    
+    
     
 ##
 #  Se convierte una matriz a vector recorriendo en orden sus filas
@@ -218,6 +221,8 @@ def calcular_centroides(autovectores):
 #  @return distancia distancia entre los puntos 
 ##
 def distancia_euclidiana(punto1,punto2):
+    print(punto1)
+    print(punto2)
     if (len(punto1) != len(punto2)):
         raise ValueError("Los puntos a calculcar su distancia deben tener la misma dimensionalidad")
     else:
@@ -234,9 +239,9 @@ def distancia_euclidiana(punto1,punto2):
 #  @return etiqueta etiqueta del sujeto correspondiente 
 ##    
 def reconocer(archivo):
-    imagen = cv2.imread(archivo, -1)
-    imagen = convertirMatrizAVector(imagen)
-    promedio = np.average(imagen)
+    imagen = cv2.imread(archivo, 0)
+    vector = convertirMatrizAVector(imagen)
+    promedio = np.average(vector)
     etiqueta = 0
     menor_dist = 0
     global centroides #cambiar, usar el atributo de la clase
@@ -249,9 +254,8 @@ def reconocer(archivo):
             if(distancia < menor_dist):
                 menor_dist = distancia
                 etiqueta = i
-    return indice_centroide + 1
+    return etiqueta + 1
         
-
         
 
 

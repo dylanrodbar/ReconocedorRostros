@@ -18,21 +18,13 @@ def procesar(request):
     files = request.FILES.getlist("file")
     
     
-    print(files)
+    Trozos.cargarImagen(files)
         
-    for i in files:
-        imagen = i.read()
-        img = cv2.imdecode(np.fromstring(imagen, np.uint8), -1)
-        vectores.append(Trozos.convertirMatrizAVector(img))
-        
-    matriz = Trozos.crearMatrizDeVectores(vectores)
     
-    
-    mCovarianza = Trozos.calcularMatrizCovarianza(matriz)
-    
-    Trozos.guardarMatrizDeCovarianza(mCovarianza)
-    
-        
     return render(request, 'home.html')
+
+def reconocer(request):
+    return render(request, 'home.html')
+    
 
     
