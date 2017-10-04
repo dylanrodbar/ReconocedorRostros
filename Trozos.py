@@ -4,8 +4,9 @@ import numpy as np
 from numpy import matrix
 
 centroides = [] #atributo de la clase de entrenamiento, en el init debería intentar cargar el archivo centroides.txt
-diffPrima = [] #atributo de la clase de entrenamiento, en el init debería intentar cargar el archivo autovectores.txt
-
+diffPrima = [] #atributo de la clase de entrenamiento, en el init debería intentar cargar el archivo diffprima.txt
+eigen = []
+cara_promedio = []
 
 ##
 #  Se cargan n imágenes .pmg de dimensiones l * a = p, donde l son la 
@@ -41,10 +42,11 @@ def cargarImagen(files):
     
     #Trozos.guardarMatrizTxt(mCovarianza, "Matriz")
     matriz = np.array(matriz)
+    global cara_promedio
     cara_promedio= cara_prom(matriz)
 
     diferencias = matriz_diferencias(matriz,cara_promedio)
-
+    global eigen
     eigen = auto_vectores(diferencias)
     global diffPrima
     diffPrima = np.matmul(np.transpose(eigen[1]),diferencias)
@@ -154,16 +156,17 @@ def guardarMatrizTxt(matriz,nombre):
 #  @return prom    promedio de todos los vectores, en este caso "cara promedio"
 ## 
 def cara_prom(vectores):
-    prom = []
+    prom = np.zeros(len(vectores))
+  
     #vectores = np.array(vectores) la matriz de vectores debe ser del tipo numpy.array
     for i in range(0,len(vectores[0])):
         vector = vectores[:,i]
-        if(prom==[]):
-            prom = vector
-        else:
-            prom += vector
+      
+ 
+        
+        prom += vector
     prom = prom / len(vectores[0])
-
+  
     return prom
 
 ##
@@ -196,21 +199,25 @@ def auto_vectores(matriz_diferencias):
     eigen = np.linalg.eig(covarianzaV)
     auto_valores = eigen[0]
     auto_vectoresV = eigen[1]
+    print(matriz_diferencias)
+    print(auto_vectoresV)
     auto_vectores = np.matmul(matriz_diferencias,auto_vectoresV)#cambiar, usar el atributo de la clase
     return [auto_valores,auto_vectores]
 ##
 #  Calcula los centroides de un arreglo de vectores
 #
 #
-#  @param  auto_vectores  matriz con los auto_vectores a calcular el centroide
+#  @param  auto_caras  matriz con las auto_caras a calcular el centroide
 #
 #  @return centroides arreglo del tipo numpy 
 ## 
-def calcular_centroides(autovectores):
+def calcular_centroides(autocaras,num_muestras):
     centroides= []
-    for i in range(0,len(autovectores)):
-        centroides += [np.average(autovectores[:,i])]
-    return np.array(centroides)
+    j=0
+    for i in range(0,int(len(autocaras)/num_muestras)):
+        centroides += [cara_prom(autocaras[:,j:j +num_muestras])]
+        j+=num_muestras
+    return np.transpose(np.array(centroides))
 ##
 #  Calcula la distancia entre dos puntos en un espacio euclidiano
 #
@@ -221,10 +228,8 @@ def calcular_centroides(autovectores):
 #  @return distancia distancia entre los puntos 
 ##
 def distancia_euclidiana(punto1,punto2):
-    print(punto1)
-    print(punto2)
     if (len(punto1) != len(punto2)):
-        raise ValueError("Los puntos a calculcar su distancia deben tener la misma dimensionalidad")
+        raise ValueError("Los puntos a calcular su distancia deben tener la misma dimensionalidad")
     else:
         distancia = 0
         for i in range(0,len(punto1)):
@@ -241,12 +246,16 @@ def distancia_euclidiana(punto1,punto2):
 def reconocer(archivo):
     imagen = cv2.imread(archivo, 0)
     vector = convertirMatrizAVector(imagen)
-    promedio = np.average(vector)
+    
     etiqueta = 0
     menor_dist = 0
+    global cara_promedio
+    vector = np.array(vector) - cara_promedio
+    global eigen
+    vector = np.matmul(transpose(eigen[1]),vector)
     global centroides #cambiar, usar el atributo de la clase
     for i in range(0,len(centroides)):
-        distancia =distancia_euclidiana(promedio,centroides[i])
+        distancia =distancia_euclidiana(vector,centroides[:,i])
         if(i==0):
             menor_dist = distancia
             etiqueta = i
