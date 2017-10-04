@@ -8,6 +8,9 @@ Jose  Mora Rodríguez
 Dylan Rodríguez Barboza
 
 Karina Zeledón Pinnel
+
+# Acerca de la aplicación
+El sistema de reconocimiento de rostros implementado busca satisfacer estas necesidades en Costa Rica, un país en el cual no se cuenta con gran abundancia de este tipo de medidas, en donde se han encontrado necesidades tales como elreconocimiento de costarricenses mediante sus rostros, de manera eficiente. 
   
 # Elementos del repositorio  
 
