@@ -21,9 +21,13 @@ En este repositorio se guardarán las siguientes secciones:
 
 # Diseño 
 
-En esta sección se podrá encontrar el diagrama de clases asociado al sistema de reconocimiento de rostros que se implementa en esta aplicación, se puede acceder por [este enlace](https://github.com/dylanrodbar/ReconocedorRostros/tree/master/Dise%C3%B1o)
+En esta sección se podrá encontrar el diagrama de clases asociado al sistema de reconocimiento de rostros que se implementa en esta aplicación, se puede acceder mediante [este enlace](https://github.com/dylanrodbar/ReconocedorRostros/tree/master/Dise%C3%B1o)
 
 # Aplicación web
 
+En esta sección se podrán encontrar los scripts referentes a la aplicación web que implementa el reconocedor de rostros, puede ser visualizada mediante  [este enlace](https://github.com/dylanrodbar/ReconocedorRostros/tree/master/reconocedor)
+
 # Configuraciones de la aplicación web
+
+En esta sección se podrán encontrar los scripts referentes a las configuraciones de la aplicación web, puede ser visualizada mediante  [este enlace](https://github.com/dylanrodbar/ReconocedorRostros/tree/master/ReconocedorRostrosA)
 
