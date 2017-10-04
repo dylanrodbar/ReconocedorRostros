@@ -9,10 +9,10 @@ Dylan Rodríguez Barboza
 
 Karina Zeledón Pinnel
 
-# Acerca de la aplicación
+## Acerca de la aplicación
 El sistema de reconocimiento de rostros implementado busca satisfacer estas necesidades en Costa Rica, un país en el cual no se cuenta con gran abundancia de este tipo de medidas, en donde se han encontrado necesidades tales como elreconocimiento de costarricenses mediante sus rostros, de manera eficiente. 
   
-# Elementos del repositorio  
+## Elementos del repositorio  
 
 En este repositorio se guardarán las siguientes secciones:
 
@@ -22,15 +22,15 @@ En este repositorio se guardarán las siguientes secciones:
 
 **Configuraciones de la aplicación web**
 
-# Diseño 
+### Diseño 
 
 En esta sección se podrá encontrar el diagrama de clases asociado al sistema de reconocimiento de rostros que se implementa en esta aplicación, se puede acceder mediante [este enlace](https://github.com/dylanrodbar/ReconocedorRostros/tree/master/Dise%C3%B1o)
 
-# Aplicación web
+### Aplicación web
 
 En esta sección se podrán encontrar los scripts referentes a la aplicación web que implementa el reconocedor de rostros, puede ser visualizada mediante  [este enlace](https://github.com/dylanrodbar/ReconocedorRostros/tree/master/reconocedor)
 
-# Configuraciones de la aplicación web
+### Configuraciones de la aplicación web
 
 En esta sección se podrán encontrar los scripts referentes a las configuraciones de la aplicación web, puede ser visualizada mediante  [este enlace](https://github.com/dylanrodbar/ReconocedorRostros/tree/master/ReconocedorRostrosA)
 
