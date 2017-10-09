@@ -1,4 +1,4 @@
-# Sección del análisis de los requerimientos
+# Sección del análisis de los requerimientos del sistema
 
 ## Acceso a los atributos de calidad
 
