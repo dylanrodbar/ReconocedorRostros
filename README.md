@@ -25,8 +25,7 @@ En este repositorio se guardarán las siguientes secciones:
 **Configuraciones de la aplicación web**
 
 ### Requerimientos
-En esta sección se podrá encontrar el documento asociado a los atributos de calidad, además del SyRS, asociados al sistema de reconocimiento de rostros que se implementa en esta aplicación,  se puede acceder mediante [este enlace]
-(https://github.com/dylanrodbar/ReconocedorRostros/tree/master/An%C3%A1lisis%20de%20requerimientos)
+En esta sección se podrá encontrar el documento asociado a los atributos de calidad, además del SyRS, asociados al sistema de reconocimiento de rostros que se implementa en esta aplicación,  se puede acceder mediante [este enlace](https://github.com/dylanrodbar/ReconocedorRostros/tree/master/An%C3%A1lisis%20de%20requerimientos)
 
 ### Diseño 
 
