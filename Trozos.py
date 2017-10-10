@@ -2,6 +2,8 @@ import cv2
 import os
 import numpy as np
 from numpy import matrix
+from builtins import str
+from reconocedor.Trozos import auto_vectores
 
 centroides = [] #atributo de la clase de entrenamiento, en el init debería intentar cargar el archivo centroides.txt
 diffPrima = [] #atributo de la clase de entrenamiento, en el init debería intentar cargar el archivo diffprima.txt
@@ -30,11 +32,26 @@ cara_promedio = []
 ##
 def cargarImagen(files):
     vectores = []
+    num_sujetos = 0
     for i in files:
         imagen = i.read()
         img = cv2.imdecode(np.fromstring(imagen, np.uint8), -1)
-        vectores.append(convertirMatrizAVector(img))
-        
+        filename = i.name
+        sujeto = filename.split("-")[0]
+        if(int(sujeto) > num_sujetos):
+            num_sujetos = int(sujeto)
+        vectores.append([int(sujeto),convertirMatrizAVector(img)])
+    sujetos = [0]*num_sujetos
+    for i in vectores:
+        if(sujetos[i[0]-1] == 0 ):
+            sujetos[i[0]-1] = [i[1]]
+        else:
+            sujetos[i[0]-1] += [i[1]]
+    vectores = []
+    for i in sujetos:
+           for j in i:
+               vectores.append(j)
+    
     matriz = crearMatrizDeVectores(vectores)
     
     
@@ -53,12 +70,23 @@ def cargarImagen(files):
 
     guardarMatrizTxt(diffPrima,"autovectores.txt")
     global centroides  
-    centroides= calcular_centroides(diffPrima)
+    centroides= calcular_centroides(diffPrima,10)
 
     guardarMatrizTxt(centroides,"centroides.txt")
     
     print("Reconociendo")
-    print(reconocer("C:\\Users\\user\\Documents\\ProyectoAseguramientoReconocedorRostros\\ReconocedorRostros\\input\\s1\\1.pgm"))
+    
+    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-1.pgm"))
+    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-2.pgm"))
+    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-3.pgm"))
+    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-4.pgm"))
+    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-5.pgm"))
+    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-6.pgm"))
+    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-7.pgm"))
+    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-8.pgm"))
+    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-9.pgm"))
+    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-10.pgm"))
+   
     
         
     
@@ -81,7 +109,7 @@ def convertirMatrizAVector(matriz):
     else:    
         vector = []
         
-        
+       
         for i in matriz:
             for j in i:
                 vector.append(j)
@@ -186,6 +214,13 @@ def matriz_diferencias(vectores,promedio):
     for i in range(0,len(vectores[0])):
         diff += [vectores[:,i]-promedio]
     return np.transpose(diff)
+
+
+def normalizar(vector):
+    norm=np.linalg.norm(vector)
+    if norm==0: 
+       return vector
+    return vector/norm
 ##
 #  Calcula los autovectores de una matriz de covarianza dada una matriz de diferencias
 #
@@ -199,10 +234,11 @@ def auto_vectores(matriz_diferencias):
     eigen = np.linalg.eig(covarianzaV)
     auto_valores = eigen[0]
     auto_vectoresV = eigen[1]
-    print(matriz_diferencias)
-    print(auto_vectoresV)
     auto_vectores = np.matmul(matriz_diferencias,auto_vectoresV)#cambiar, usar el atributo de la clase
-    return [auto_valores,auto_vectores]
+    auto_vectoresNorm = []
+    for i in range(0,len(auto_vectores[0])):
+        auto_vectoresNorm += [normalizar(auto_vectores[:,i])]
+    return [auto_valores,np.transpose(np.array(auto_vectoresNorm))]
 ##
 #  Calcula los centroides de un arreglo de vectores
 #
@@ -214,9 +250,13 @@ def auto_vectores(matriz_diferencias):
 def calcular_centroides(autocaras,num_muestras):
     centroides= []
     j=0
-    for i in range(0,int(len(autocaras)/num_muestras)):
+   
+    for i in range(0,int(len(autocaras[0])/num_muestras)):
+       
         centroides += [cara_prom(autocaras[:,j:j +num_muestras])]
         j+=num_muestras
+
+    
     return np.transpose(np.array(centroides))
 ##
 #  Calcula la distancia entre dos puntos en un espacio euclidiano
@@ -245,17 +285,22 @@ def distancia_euclidiana(punto1,punto2):
 ##    
 def reconocer(archivo):
     imagen = cv2.imread(archivo, 0)
-    vector = convertirMatrizAVector(imagen)
+    #img = cv2.imdecode(np.fromstring(imagen, np.uint8), -1)
     
+    vector = convertirMatrizAVector(imagen)
+    #print(vector)
     etiqueta = 0
     menor_dist = 0
     global cara_promedio
     vector = np.array(vector) - cara_promedio
     global eigen
-    vector = np.matmul(transpose(eigen[1]),vector)
+    vector = np.matmul(np.transpose(eigen[1]),vector)
     global centroides #cambiar, usar el atributo de la clase
-    for i in range(0,len(centroides)):
-        distancia =distancia_euclidiana(vector,centroides[:,i])
+    
+    
+    for i in range(0,len(centroides[0])):
+        distancia = distancia_euclidiana(vector,centroides[:,i])
+        
         if(i==0):
             menor_dist = distancia
             etiqueta = i
@@ -263,6 +308,7 @@ def reconocer(archivo):
             if(distancia < menor_dist):
                 menor_dist = distancia
                 etiqueta = i
+    
     return etiqueta + 1
         
         
