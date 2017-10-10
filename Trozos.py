@@ -64,11 +64,12 @@ def cargarImagen(files):
 
     diferencias = matriz_diferencias(matriz,cara_promedio)
     global eigen
-    eigen = auto_vectores(diferencias)
+    eigen = auto_vectores(diferencias, 100)
+    guardarMatrizTxt(eigen[1], "autovectores.txt")
     global diffPrima
     diffPrima = np.matmul(np.transpose(eigen[1]),diferencias)
-
-    guardarMatrizTxt(diffPrima,"autovectores.txt")
+    
+    guardarMatrizTxt(diffPrima,"autocaras.txt")
     global centroides  
     centroides= calcular_centroides(diffPrima,10)
 
@@ -229,15 +230,24 @@ def normalizar(vector):
 #
 #  @return [auto_valores,auto_vectores] arreglo con dos posiciones, auto valores y autovectores
 ## 
-def auto_vectores(matriz_diferencias):
+def auto_vectores(matriz_diferencias, porcentaje_autovectores):
     covarianzaV = np.matmul(np.transpose(matriz_diferencias),matriz_diferencias)
     eigen = np.linalg.eig(covarianzaV)
     auto_valores = eigen[0]
     auto_vectoresV = eigen[1]
     auto_vectores = np.matmul(matriz_diferencias,auto_vectoresV)#cambiar, usar el atributo de la clase
+    idx = auto_valores.argsort()[::-1]  
+    auto_vectores = auto_vectores[:,idx]
+    num_autovect = len(auto_valores)
+    num_autovect = int(num_autovect * (porcentaje_autovectores/100))
+    auto_vectores = auto_vectores[:,0:num_autovect]
     auto_vectoresNorm = []
     for i in range(0,len(auto_vectores[0])):
         auto_vectoresNorm += [normalizar(auto_vectores[:,i])]
+    
+    
+    
+    
     return [auto_valores,np.transpose(np.array(auto_vectoresNorm))]
 ##
 #  Calcula los centroides de un arreglo de vectores
