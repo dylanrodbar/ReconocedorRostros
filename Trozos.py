@@ -1,8 +1,7 @@
 import cv2
-import os
+import random
 import numpy as np
-from numpy import matrix
-from builtins import str
+
 from reconocedor.Trozos import auto_vectores
 
 centroides = [] #atributo de la clase de entrenamiento, en el init debería intentar cargar el archivo centroides.txt
@@ -33,6 +32,7 @@ cara_promedio = []
 def cargarImagen(files):
     vectores = []
     num_sujetos = 0
+    
     for i in files:
         imagen = i.read()
         img = cv2.imdecode(np.fromstring(imagen, np.uint8), -1)
@@ -48,9 +48,16 @@ def cargarImagen(files):
         else:
             sujetos[i[0]-1] += [i[1]]
     vectores = []
+    muestras_reconocer= []
     for i in sujetos:
-           for j in i:
-               vectores.append(j)
+        
+        recon = random.sample(range(1, 11), 2)
+        muestras_reconocer += [recon]
+        cont = 1
+        for j in i:
+            if cont not in recon:
+                vectores.append(j)
+            cont += 1
     
     matriz = crearMatrizDeVectores(vectores)
     
@@ -64,31 +71,61 @@ def cargarImagen(files):
 
     diferencias = matriz_diferencias(matriz,cara_promedio)
     global eigen
-    eigen = auto_vectores(diferencias, 100)
+    eigen = auto_vectores(diferencias, 10)
     guardarMatrizTxt(eigen[1], "autovectores.txt")
     global diffPrima
     diffPrima = np.matmul(np.transpose(eigen[1]),diferencias)
     
     guardarMatrizTxt(diffPrima,"autocaras.txt")
     global centroides  
-    centroides= calcular_centroides(diffPrima,10)
+    centroides= calcular_centroides(diffPrima,8)
 
     guardarMatrizTxt(centroides,"centroides.txt")
     
     print("Reconociendo")
-    
-    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-1.pgm"))
-    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-2.pgm"))
-    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-3.pgm"))
-    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-4.pgm"))
-    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-5.pgm"))
-    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-6.pgm"))
-    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-7.pgm"))
-    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-8.pgm"))
-    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-9.pgm"))
-    print(reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s25\\25-10.pgm"))
+    matriz_confusion = x = x = [[0 for i in range(41)] for j in range(41)]
+    for i in range(1,42):
+        print("reconociendo "+str(i))
+        etiquet = []
+        etiquet += [reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s"+str(i)+"\\"+str(i)+"-"+str(muestras_reconocer[i-1][0])+".pgm")]
+        
+        etiquet += [reconocer("C:\\Users\\josem\\Desktop\\PCA\\input\\s"+str(i)+"\\"+str(i)+"-"+str(muestras_reconocer[i-1][1])+".pgm")]
+        print(etiquet)
+        if(etiquet[0] == i):
+            matriz_confusion[i-1][i-1] += 1
+        else:
+            matriz_confusion[etiquet[0]-1][i-1] += 1
+        if(etiquet[1] == i):
+            matriz_confusion[i-1][i-1] += 1
+        else:
+            matriz_confusion[etiquet[1]-1][i-1] += 1
    
+    precision = []
+    recall = []
+    for i in range(1,42):
+        metric = metricas(matriz_confusion, i)
+        if(metric[0]+metric[1]== 0):
+            precision += [0]
+        else:
+            precision += [metric[0]/(metric[0]+metric[1])]
+        if(metric[0]+metric[2]== 0):
+            recall += [0]
+        else:
+            recall += [metric[0]/(metric[0]+metric[2])]
+   
+    print(np.average(precision))
+    print(np.average(recall))
+        
+def metricas(matriz,sujeto):
+    VP = matriz[sujeto-1][sujeto-1]
+   
+    matriz = np.array(matriz)
+    FP = np.sum(matriz[sujeto-1][np.arange(len(matriz[sujeto-1]))!=sujeto-1])
+    FN = np.sum(matriz[:,sujeto-1])
+    FN = FN - matriz[:,sujeto-1][sujeto-1]
     
+    return [VP,FP,FN]
+        
         
     
     
@@ -232,15 +269,16 @@ def normalizar(vector):
 ## 
 def auto_vectores(matriz_diferencias, porcentaje_autovectores):
     covarianzaV = np.matmul(np.transpose(matriz_diferencias),matriz_diferencias)
-    eigen = np.linalg.eig(covarianzaV)
+    eigen = np.linalg.eigh(covarianzaV)
     auto_valores = eigen[0]
     auto_vectoresV = eigen[1]
     auto_vectores = np.matmul(matriz_diferencias,auto_vectoresV)#cambiar, usar el atributo de la clase
-    idx = auto_valores.argsort()[::-1]  
-    auto_vectores = auto_vectores[:,idx]
+   
     num_autovect = len(auto_valores)
+    print(num_autovect)
     num_autovect = int(num_autovect * (porcentaje_autovectores/100))
-    auto_vectores = auto_vectores[:,0:num_autovect]
+    print(num_autovect)
+    auto_vectores = auto_vectores[:,-num_autovect:]
     auto_vectoresNorm = []
     for i in range(0,len(auto_vectores[0])):
         auto_vectoresNorm += [normalizar(auto_vectores[:,i])]
