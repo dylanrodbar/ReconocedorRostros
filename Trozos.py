@@ -1,6 +1,7 @@
 import cv2
 import random
 import numpy as np
+import csv
 
 from reconocedor.Trozos import auto_vectores
 
@@ -100,22 +101,30 @@ def cargarImagen(files):
         else:
             matriz_confusion[etiquet[1]-1][i-1] += 1
    
-    precision = []
-    recall = []
+    precisiones = []
+    recalls = []
+    csvfile = open('metricas.csv', 'w+')
+    writer = csv.writer(csvfile, delimiter=',',
+                        quotechar='|', quoting=csv.QUOTE_MINIMAL)
+    writer.writerow(['Sujeto ','VP','FP','FN','Precision','Recall'])
     for i in range(1,42):
         metric = metricas(matriz_confusion, i)
-        if(metric[0]+metric[1]== 0):
-            precision += [0]
-        else:
-            precision += [metric[0]/(metric[0]+metric[1])]
-        if(metric[0]+metric[2]== 0):
-            recall += [0]
-        else:
-            recall += [metric[0]/(metric[0]+metric[2])]
-   
-    print(np.average(precision))
-    print(np.average(recall))
-        
+        precision = 0
+        recall = 0
+        if(metric[0]+metric[1]!= 0):
+            precision = metric[0]/(metric[0]+metric[1])
+     
+        precisiones += [precision]
+        if(metric[0]+metric[2]!= 0):
+            recalls = metric[0]/(metric[0]+metric[2])
+        recalls += [recall]
+        writer.writerow([str(i),str(metric[0]),str(metric[1]), str(metric[2]),
+                         precision,recall])
+    writer.writerow(['Precision',np.average(precisiones)])
+    writer.writerow(['Recall',np.average(recalls)])
+    print(np.average(precisiones))
+    print(np.average(recalls))
+    csvfile.close()
 def metricas(matriz,sujeto):
     VP = matriz[sujeto-1][sujeto-1]
    
