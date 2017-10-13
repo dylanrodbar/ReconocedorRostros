@@ -1,0 +1,2132 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{palatino}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 3cm
+\rightmargin 2.5cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+
+\size larger
+\lang english
+Tecnológico de Costa Rica
+\size default
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+
+\lang english
+Ingeniería en Computación
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+
+\lang english
+IC6831 -Aseguramiento de la Calidad del Software
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+SyRS, Proyecto Semestral
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+Profesor: Saúl Calderón Ramírez 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+
+\lang english
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+Estudiantes: 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+José Miguel Mora Rodríguez 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+Dylan Rodríguez Barboza 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+Karina Zeledón Pinell 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+Octubre, 2017
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+System purpose 
+\end_layout
+
+\begin_layout Standard
+Se han hecho numerosos estudios relacionados con el reconocimiento de personas
+ por medio de características conductuales o físicas de los sujetos.
+\end_layout
+
+\begin_layout Standard
+La biometría ha sido un importante objeto de estudio.
+ Para el contexto deseado, se requiere un sistema con la capacidad de reconocer
+ personas por medio de su rostro.
+ Se han hecho sistemas de reconocimiento en Australia y Nueva Zelanda, incluso
+ se cuenta con una aplicación para teléfonos llamada AppLock, la cual permite
+ utilizar la cámara de los mismos para reconocer al sujeto y que se le den
+ los permisos necesarios para el uso de ciertas aplicaciones.
+ Para este sistema, se desea que pueda ser implementado en Costa Rica.
+\end_layout
+
+\begin_layout Standard
+\align block
+Hace unos años era imposible pensar en una forma de identificarse en ciertos
+ lugares de forma alterna a la cédula de identificación o pasaporte, actualmente
+ es posible imaginarlo.
+ Las necesidades actuales requieren que un sujeto pueda ser reconocido de
+ maneras más precisas, como se puede hacer en un sistema de reconocimiento
+ de rostros.
+ Esto es, que mediante sistemas modernos, una persona pueda ser reconocida
+ de forma efectiva por medio de una toma de su rostro, aumentando así las
+ medidas de seguridad de ciertos lugares, por ejemplo, en los aeropuertos.
+\end_layout
+
+\begin_layout Standard
+\align block
+El sistema de reconocimiento de rostros que se planea implementar busca
+ satisfacer estas necesidades en Costa Rica, un país en el cual no se cuenta
+ con gran abundancia de este tipo de medidas, en donde se han encontrado
+ necesidades tales como:
+\end_layout
+
+\begin_layout Enumerate
+\align block
+Reconocimiento de costarricenses mediante sus rostros, de manera eficiente.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\align block
+Aumentar las medidas de seguridad de acceso mediante este sistema.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\align block
+Admitir nuevos rostros para su posterior reconocimiento cada vez que se
+ se produzca una cédula de identidad o un pasaporte, en donde el reconocimiento
+ es una forma de identificación alterna a las dos identificaciones mencionadas.
+ 
+\end_layout
+
+\begin_layout Section
+System scope
+\end_layout
+
+\begin_layout Standard
+El sistema puede ser identificado mediante el nombre de
+\series bold
+ CostaRican Faces Recognition System
+\series default
+ el cual identifica con claridad las necesidades por las que el sistema
+ será implementado.
+\end_layout
+
+\begin_layout Standard
+Tomando en cuenta las necesidades planteadas en el punto anterior, se conoce
+ que los posibles usuarios o asociados necesitan de un sistema que pueda
+ satisfacer las necesidades de identificación de los costarricenses, incluyendo
+ un buen tiempo de respuesta y constante actualización de datos, siendo
+ este el principal problema por resolver, para lograr esto, el sistema debe:
+\end_layout
+
+\begin_layout Enumerate
+Permitir a lugares en los que se requiera la identificación de un costarricense.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Actuar en un tiempo de respuesta formidable para la cantidad de personas
+ inscritas en el sistema.
+\end_layout
+
+\begin_layout Enumerate
+Tener la capacidad para procesar el total o un aproximado de la población
+ total costarricense.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Tener una sesión de mantenimiento cada cierto tiempo, en el que se actualicen
+ los datos con nuevas fotos de rostros, tomando en cuenta los pequeños cambios
+ que puede tener un rostro.
+ 
+\end_layout
+
+\begin_layout Standard
+Por otro lado, el sistema debe evitar lo siguiente:
+\end_layout
+
+\begin_layout Enumerate
+Actuar con un tiempo de respuesta mayor al esperado.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Aceptar un número menor al 90% de la cantidad de costarricenses con cédula
+ de identidad o pasaporte.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Permanecer siempre con las mismas fotografías de rostros, debido a los cambios
+ que estos pueden tener con el paso del tiempo.
+ 
+\end_layout
+
+\begin_layout Standard
+Los siguientes son los productos que se esperan para el proyecto:
+\end_layout
+
+\begin_layout Enumerate
+POC: en este avance se espera que se tenga orientación en relación con lo
+ que el proyecto pretende solucionar.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Avance: se especifica el contexto, requerimientos y cualquier tipo información
+ que sea útil para la comunicación entre los usuarios y los encargados del
+ proyecto, incluyendo diagramas que describen las funcionalidades del sistema.
+\end_layout
+
+\begin_layout Enumerate
+Dos muestras del sistema funcionando: estos son otros avances que le permiten
+ al usuario verificar si el funcionamiento del sistema cumple con sus requerimie
+ntos iniciales, las muestras del avance se entregarán en diferentes fechas,
+ para concluir con el producto final.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Producto final: este será el producto implementado con todas las funcionalidades
+ acordadas para el proyecto, esta entrega deberá incluir un manual de usuario
+ que permita la comprensión del sistema.
+ Antes del producto final, deben hacerse efectivas las entregas relacionadas
+ con UML y avances previos.
+ 
+\end_layout
+
+\begin_layout Section
+System context
+\end_layout
+
+\begin_layout Standard
+El sistema de reconocimiento de rostros cuenta con los siguientes elementos:
+\end_layout
+
+\begin_layout Enumerate
+Entrada: el usuario inserta una imagen o carpeta en el sistema, si es una
+ imagen, se pretende que el sistema intente reconocer al sujeto en cuestión,
+ si es una carpeta, se espera que el sistema guarde la información respectiva
+ al sujeto.
+\end_layout
+
+\begin_layout Enumerate
+Procesamiento: dada una entrada, el sistema debe aplicar los procesos que
+ tiene para las entradas mencionadas anteriormente, este debe hacer un cálculo
+ para enviarlo como salida.
+\end_layout
+
+\begin_layout Enumerate
+Salida: una vez hecho el cálculo en el procesamiento, el sistema debe ser
+ capaz de mostrarle al usuario algún indicador de que la operación se hizo
+ con éxito o no, además de dar una muestra de lo que se procesó en el elemento
+ anterior.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Retroalimentación: el uso que se le da al sistema y los posibles éxitos
+ o fracasos que se puedan tener con este, servirá como retroalimentación
+ y para hacer arreglos en futuras implementaciones que se le den.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Image/pasted image 0.png
+	scale 50
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+System functions
+\end_layout
+
+\begin_layout Standard
+En la siguiente tabla se explicarán las capacidades, condiciones y restricciones
+ de los :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="middle" width="4cm">
+<column alignment="center" valignment="middle" width="5cm">
+<column alignment="center" valignment="middle" width="3cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Capacidad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Condiciones
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Restricciones
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Recibir una imagen o carpeta por medio de un buscador.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+El usuario debe indicar por medio del buscador, cuál imagen o carpeta desea
+ incluir.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Las imágenes que se quieran ingresar deben estar, por el momento, en formato
+ pgm.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Caso 1: si la entrada es una carpeta, se entrenará al sistema, de manera
+ que la carpeta sea reconocida posteriormente como un sujeto.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Caso 2: si la entrada es una imagen, el sistema la procesará para identificar
+ con cuál sujeto coincide.
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.
+ El usuario debe haber seleccionado una imagen o carpeta con anterioridad,
+ además de indicarle al sistema que haga el procesamiento.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+2.
+ El tiempo de entrenamiento por cada usuario con 10 muestras debe ser menor
+ a 2 minutos.
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Las imágenes seleccionadas deben ser en formato pgm.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Proveer una interfaz gráfica que sea fácilmente comprensible, de manera
+ que las acciones principales sean invocadas con facilidad.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No hay alguna condición en particular.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No hay alguna restricción en particular.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Identificar el rostro de un usuario dada una imagen y retornar la etiqueta
+ correspondiente a ese usuario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.
+ El usuario debe indicar por medio del buscador, cuál imagen desea procesar.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+2.
+ El tiempo que dure la aplicación en reconocer al usuario debe ser de entre
+ 5s a 10s o menos.
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Las imágenes que se quieran ingresar deben estar, por el momento, en formato
+ pgm.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+User characteristics
+\end_layout
+
+\begin_layout Standard
+Para el contexto del sistema, se identificaron tres tipos de personas involucrad
+as: 
+\end_layout
+
+\begin_layout Enumerate
+Desarrolladores: los desarrolladores serán los encargados de involucrarse
+ con la implementación del sistema, ya sea mediante la programación de las
+ funcionalidades requeridas como documentando los errores o aciertos que
+ se tengan con el mismo.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Usuarios: los usuarios del sistema serán aquellos que harán el uso del mismo,
+ estos están localizados en diferentes partes del país, en los lugares en
+ donde se haya instalado el sistema.
+ También serán los responsables de entrenar al sistema mediante imágenes
+ asociadas a sujetos, así como responsables de solicitarle que reconozca
+ a un rostros en particular.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Mantenimiento: las personas encargadas del mantenimiento del sistema tendrán
+ que implementar o arreglar las funcionalidades requeridas, tendrán habilidades
+ parecidas a la de los desarrolladores, con la diferencia de que los encargados
+ del mantenimiento del sistema entrarán en operación una vez que se termine
+ la primera implementación completa.
+ 
+\end_layout
+
+\begin_layout Section
+Functional requirements
+\end_layout
+
+\begin_layout Standard
+Los requerimientos funcionales tomados para el contexto de este proyecto
+ son los siguientes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="4">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="4cm">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="4cm">
+<column alignment="center" valignment="top" width="2cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nombre del requerimiento
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Identificador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Descripción
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Prioridad
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Almacenamiento de muestras de diferentes personas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se requiere que el sistema tenga la capacidad de guardar datos muestrales
+ de diferentes sujetos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alta
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Almacenamiento de datos personales de diferentes personas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-02
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Además de las muestras de fotos de los rostros, se requiere que se guarden
+ además datos personales que puedan ser desplegados cuando se identifique
+ al sujeto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Media
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Encontrar coincidencias entre sujetos y sus rostros
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-03
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se requiere que el sistema sea capaz de encontrar coincidencias entre la
+ imagen de entrada y la base de datos muestral
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alta
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Capacidad de entrenar al sistema
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-04
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se requiere que el sistema sea capaz de ser entrenado mediante la entrada
+ de carpetas asociadas a sujetos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alta
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Interfaz web 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se debe de proveer una interfaz web sobre la cual se pueda hacer uso del
+ sistema de reconocimiento de rostros y el ingresar nuevas muestras.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alta
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Manejo de diferentes usuarios que puedan ingresar al sistema
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-06
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se debe proveer la capacidad de entrada a diferentes usuarios, por medio
+ de un nombre de usuario y contraseña
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medio
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reconocedor complementario de iris ocular
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-07
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se debe proveer un reconocedor de iris ocular, que entre en funcionamiento
+ en caso de que se requiera de un reconocimiento alterno si llega a fallar
+ el reconocimiento facial
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bajo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reconocedor complementario de huella dactilar
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se debe proveer un reconocedor de huella dactilar, que entre en funcionamiento
+ en caso de que se requiera de un reconocimiento alterno si llega a fallar
+ el reconocimiento facial
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bajo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Usability requirements
+\end_layout
+
+\begin_layout Standard
+Para asegurarse de que el sistema cumplirá con la usabilidad requerida,
+ se definen los siguientes requerimientos de usabilidad basados en los siguiente
+s atributos de calidad, basado en el estándar ISO-9126: 
+\end_layout
+
+\begin_layout Subsection
+Capacidad para ser aprendido 
+\end_layout
+
+\begin_layout Itemize
+Capacidad del sistema de ser aprendido en su primer uso: el usuario debe
+ ser capaz de aprender fácilmente acerca del funcionamiento del sistema.
+ 
+\end_layout
+
+\begin_layout Itemize
+Capacidad del sistema de ser recordado después de su primer uso: el usuario
+ debe ser capaz de utilizar el sistema correctamente, una vez que haya sido
+ probado.
+ 
+\end_layout
+
+\begin_layout Subsection
+Capacidad para ser entendido 
+\end_layout
+
+\begin_layout Itemize
+Capacidad del sistema de ser intuitivo: el usuario debe ser capaz de intuir
+ sobre ciertas funcionalidades del sistema, ya sea, por ejemplo, añadir
+ imágenes para entrenar al sistema o añadir una imagen para que se busquen
+ coincidencias.
+ 
+\end_layout
+
+\begin_layout Subsection
+Capacidad para ser operado 
+\end_layout
+
+\begin_layout Itemize
+Capacidad del sistema para ser usado fácilmente: las operaciones que brinde
+ el sistema deben ser fácilmente invocadas por el usuario 
+\end_layout
+
+\begin_layout Section
+Performance requirements
+\end_layout
+
+\begin_layout Standard
+Para asegurarse de que el sistema cumplirá con el desempeño requerido, se
+ definen los siguientes requerimientos de desempeño basados en los siguientes
+ atributos de calidad, basado en el estándar ISO-9126:
+\end_layout
+
+\begin_layout Subsection
+Comportamiento temporal 
+\end_layout
+
+\begin_layout Itemize
+Capacidad del sistema de dar respuesta en un lapso corto: el sistema debe
+ ser capaz realizar los cálculos de entrenamiento y reconocimiento de rostros
+ en un lapso corto, el umbral esperado es un tiempo de respuesta de entre
+ 5 y 10 segundos.
+ Para cumplir con este requerimiento, se planea utilizar la métrica de tiempo
+ de respuesta, utilizando la herramienta que soporta el lenguaje de programación
+ PyDev en el entorno de eclipse.
+ 
+\end_layout
+
+\begin_layout Subsection
+Utilización de recursos 
+\end_layout
+
+\begin_layout Itemize
+Capacidad del sistema de utilizar solamente los recursos necesarios: el
+ sistema debe ser capaz de utilizar los recursos necesarios para realizar
+ los cálculos, para así asegurar un buen desempeño del sistema, el umbral
+ esperado es la documentación del 90% de los módulos, indicando en estos
+ la capacidad de disco que ocupan.
+ Para cumplir con este requerimiento, se planea utilizar la métrica de máxima
+ utilización de memoria, utilizando la herramienta visio para la creación
+ de diagramas.
+ 
+\end_layout
+
+\begin_layout Subsection
+Cumplimiento de eficiencia 
+\end_layout
+
+\begin_layout Itemize
+Capacidad del sistema de proveer eficiencia: el sistema debe ser capaz de
+ manejar buenos tiempos de ejecución.
+ Para cumplir con este requerimiento, se planea utilizar la métrica de cumplimie
+nto de la eficiencia, con la cual se quiere cumplir con un umbral contemplado
+ en realizar dos o tres pruebas de cada módulo que se implemente, mediante
+ la herramienta selenium.
+ 
+\end_layout
+
+\begin_layout Section
+System interfaces
+\end_layout
+
+\begin_layout Standard
+El sistema está pensado para ser ejecutado en un ambiente web, en el cual
+ se posee un servidor, del cual se consumirá y consultará los datos para
+ buscar coincidencias con rostros, por lo que la principal interfaz que
+ se planea implementar para el sistema es: 
+\end_layout
+
+\begin_layout Enumerate
+Una interfaz cliente-servidor en la que se pueda consultar los datos relacionado
+s con el entrenamiento recibido para el reconocimiento de los rostros.
+ El cliente será representado por cada lugar del país en el que se utilizará
+ el sistema, mientras que el servidor será el medio mediante el cual se
+ podrán consultar los datos necesarios para buscar las coincidencias de
+ los rostros que se planeen reconocer.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Una interfaz cliente-servidor en la que se pueda insertar datos relacionados
+ con nuevas imágenes de nuevos sujetos.
+ El cliente será representado por cada lugar del país en el que se usará
+ el sistema, mientras que el servidor será el medio mediante el cual se
+ podrán insertar los datos necesarios para entrenar al sistema con nuevos
+ rostros.
+\end_layout
+
+\begin_layout Standard
+Debido a que el sistema se encuentra en una fase inicial, no se requerirá
+ especialmente que se cumpla con esa interfaz por diferentes lugares del
+ país, por el momento.
+ Por el momento, se planea implementar el sistema para que pueda ser ejecutado
+ por al menos una computadora.
+ 
+\end_layout
+
+\begin_layout Section
+Human System Integration Requirements
+\end_layout
+
+\begin_layout Standard
+El sistema deberá contar con el apoyo de personal en el caso de que el reconocim
+iento del rostro del usuario no sea exitoso debido a algún error del sistema
+ o porque dicho usuario no se encuentra registrado en la base de datos.
+ Con base en lo anterior dicho personal deberá ejecutar el siguiente proceso:
+\end_layout
+
+\begin_layout Enumerate
+Verificar que el usuario se encuentra en el base de datos
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Si no está:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Proceder a verificar manualmente su identidad y datos relevantes para el
+ control fronterizo.
+\end_layout
+
+\begin_layout Enumerate
+Evaluar si es factible el ingreso de sus muestras al sistema 
+\end_layout
+
+\begin_layout Enumerate
+Si es factible ingresar sus muestras, si no terminar el proceso.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Si está: Contactar con el sistema de soporte que se brinde al sistema
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Maintainability
+\end_layout
+
+\begin_layout Standard
+Los aspectos relevantes al mantenimiento del sistema son los siguientes:
+ 
+\end_layout
+
+\begin_layout Enumerate
+Tiempo:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Downtime máximo: Se refiere al tiempo máximo que puede estar el sistema
+ sin funcionar.
+ Ya que se tiene un sistema de control manual, no es estricto el uso del
+ sistema automatizado.
+ Se estima que el sistema debe estar como máximo 3 días sin estar habilitado
+ en meses que estadísticamente se compruebe el ingreso de personas al país
+ es bajo y 1 día en el caso contrario.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Tiempo de reacción: Es el tiempo de respuesta que tiene el equipo de soporte
+ proveído para el sistema.
+ El tiempo máximo de respuesta deberá ser de 1 día.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Tiempo promedio entre actividades de mantenimiento: Se realizará mantenimiento
+ una vez al mes al sistema con el fin de comprobar su adecuado funcionamiento.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Complejidad en el mantenimiento 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Nivel de habilidades en el equipo de mantenimiento: El equipo de mantenimiento
+ debe contar con un experto en el desarrollo y mantenimiento de sistemas
+ biométricos para atender casos extremos y varias personas con entendimiento
+ básico del sistema y debidamente capacitados para solucionar problemas
+ recurrentes del sistema.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Equipo: En los puestos fronterizos se deberá contar con una webcam y equipo
+ para la transferencia de información y su debido procesamiento.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Índices de costo por mantenimiento: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Costo de mantenimiento: El costo por cada acción de mantenimiento se negociará
+ con el responsable del producto una vez finalizado el proyecto con el fin
+ de lograr una mejor estimación con base en la implementación final del
+ sistema.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Reliability
+\end_layout
+
+\begin_layout Standard
+Los requerimientos relacionados a la confiabilidad del sistema son los siguiente
+s:
+\end_layout
+
+\begin_layout Enumerate
+Uptime del sistema de reconocimiento de rostros: Debe de funcionar de forma
+ 24/7, con tiempos de baja aceptables definidos en el apartado anterior.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Uptime del sistema de entrenamiento: Se debe de proveer mecanismos para
+ el correcto funcionamiento ininterrumpido del sistema durante el entrenamiento
+ del mismo o bien mecanismos que simulan ese comportamiento con el fín de
+ no perder el proceso en esta acción.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Uptime de la interfaz web: Debido a que la interfaz web será implementada
+ solo como forma de realizar pruebas al sistema, no se tienen consideraciones
+ con respecto a este aspecto.
+ 
+\end_layout
+
+\begin_layout Section
+System Modes and States
+\end_layout
+
+\begin_layout Standard
+El sistema cuenta con dos modos que serán explicados a continuación:
+\end_layout
+
+\begin_layout Enumerate
+Modo de entrenamiento: Consiste en el cálculo de las auto-caras o eigen-faces,
+ así como la proyección de todas las muestras en el nuevo espacio de dimensional
+idad reducida de auto-caras.
+\end_layout
+
+\begin_layout Enumerate
+Modo de reconocimiento: El modo de identificación de sujetos consiste en
+ una fachada que simula la identificación de un sujeto usando el sistema
+ de auto-caras pre-entrenado.
+\end_layout
+
+\begin_layout Standard
+Ambos modos deben estar disponibles en la interfaz web de la aplicación.
+ Para mayor detalle se puede hacer referencia al apartado de requerimientos
+ funcionales y el enunciado utilizado en la fase de prueba de concepto.
+ 
+\end_layout
+
+\begin_layout Section
+Physical requirements
+\end_layout
+
+\begin_layout Standard
+El sistema como ha sido explicado anteriormente debe ser diseñado para su
+ implementación en puntos fronterizos en el país, tanto aeropuertos, puertos
+ como en puntos fronterizos terrestres.
+ 
+\end_layout
+
+\begin_layout Standard
+Para la implementación del sistema en los puestos fronterizos serán necesarios:
+ 
+\end_layout
+
+\begin_layout Enumerate
+Cámara para la captura de la foto de los usuarios.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Espacio para tomar la fotografía con medidas de 1.5x1.5x3m.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Fondo liso donde se tome la fotografía(para evitar “ruido” en la fotografía).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Puesto para personal encargado de manejar casos especiales o fallos del
+ sistema.
+\end_layout
+
+\begin_layout Enumerate
+Espacios para implementar distintos sistemas de reconocimiento a futuro.
+ 
+\end_layout
+
+\begin_layout Section
+Adaptability requirements
+\end_layout
+
+\begin_layout Standard
+En términos de adaptabilidad se espera que el ingreso de la información
+ se realice de forma gradual teniendo en cuenta los siguientes aspectos:
+ 
+\end_layout
+
+\begin_layout Enumerate
+Cada imagen ingresada al sistema tendrá un tamaño de entre 10 - 15 kb en
+ un formato .pgm 
+\end_layout
+
+\begin_layout Enumerate
+Cada usuario tendrá aproximadamente 10 imágenes de muestra dando como resultado
+ 10 x 12.5kb (promedio) = 125 kb por usuario.
+\end_layout
+
+\begin_layout Enumerate
+Se maneja el aproximado de 5 millones de habitantes en el país de acuerdo
+ a especificaciones del responsable del producto.
+\end_layout
+
+\begin_layout Enumerate
+Se tiene 125 kb por usuario, 5 000 000 habitantes x 125 = 596.046 GB de informaci
+ón en total 
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuenta estos aspectos se debe de implementar un RAID array el
+ cual proporcione mirroring como un RAID 1, con un disco SSD principal y
+ el backup realizado en un disco magnético.
+ En términos de adaptabilidad se debe de tener en cuenta la posibilidad
+ de instalar un array de discos mayor por lo que se debe de tener espacio
+ para instalar al menos dos arrays más en el caso de que el tamaño de los
+ archivos sea mayor o se guarde un mayor número de muestras por sujeto.
+ 
+\end_layout
+
+\begin_layout Section
+Environmental conditions
+\end_layout
+
+\begin_layout Standard
+El sistema será implementado en los siguientes ambientes sobre los cuales
+ se deberán tener en cuenta los siguientes aspectos:
+\end_layout
+
+\begin_layout Enumerate
+Aeropuertos: Transmisiones de torres de control, redes inalámbricas, señales
+ telefónicas.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Puertos: Transmisiones de torres de control, señales telefónicas, humedad.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Puntos fronterizos terrestres: Señales telefónicas, redes inalámbricas,
+ humedad.
+\end_layout
+
+\begin_layout Standard
+Por lo que se deberá tener las consideraciones correspondientes a la hora
+ de transmisión de datos y el uso de tecnologías de forma que no causen
+ interferencias en las transmisiones realizadas principalmente en los dos
+ primeros ambientes.
+ 
+\end_layout
+
+\begin_layout Standard
+El sistema deberá ser implementado en localidades con luz óptima para la
+ toma de las fotografías(criterio el cual será definido posteriormente)
+ y bajo techo de forma que no se tenga que lidiar con condiciones climáticas
+ adversas.
+ 
+\end_layout
+
+\begin_layout Section
+System Security 
+\end_layout
+
+\begin_layout Standard
+Los siguientes aspectos entorno a la seguridad del sistema deben ser tomados
+ en cuenta como requerimientos del mismo:
+\end_layout
+
+\begin_layout Enumerate
+Encriptación de los datos: Se debe de utilizar un sistema de encriptación
+ para los datos de los usuarios el cual garantice la privacidad de los datos,
+ de forma que si un tercero logra tener acceso a los mismos este no pueda
+ hacer uso de ellos.
+\end_layout
+
+\begin_layout Enumerate
+Encriptación de comunicaciones: De igual forma se debe de proveer un mecanismo
+ de encriptación de comunicaciones y transmisión de información, el cual
+ puede ser realizado en conjunto con la encriptación de datos si se demuestra
+ que el estándar de codificación de datos utilizados es suficiente medida
+ de seguridad.
+\end_layout
+
+\begin_layout Enumerate
+Limitación de acceso: El sistema debe de proveer un sistema de control de
+ acceso de usuarios de modo que no cualquier usuario pueda ingresar a toda
+ la información del sistema.
+ Se deben de proveer al menos los roles de Administrador y Usuario, los
+ cuales tendrán los siguientes privilegios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Administrador: Acceso a todas las funcionalidades y datos del sistema.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Usuario: Acceso a la interfaz para subir una imagen y obtener resultados
+ del sistema.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Recuperación de datos: Los datos del sistema deben de ser respaldados de
+ forma que si son borrados puedan ser recuperados sin necesidad de tomar
+ las muestras de nuevo.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Uso de logs: Las funciones y operaciones realizadas en el sistema deben
+ ser registradas en archivos de logs para así identificar de manera precisa
+ cuándo ocurre un fallo y por qué ocurrió.
+ 
+\end_layout
+
+\begin_layout Section
+Information management
+\end_layout
+
+\begin_layout Standard
+El sistema manejará la siguiente información:
+\end_layout
+
+\begin_layout Enumerate
+Entrada: Archivos .pgm de entre 10 - 15kb aproximadamente los cuales almacenará
+ en un sistema de archivos para su posterior procesamiento.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Medios de entrada: Cámara web y carga directa de archivos 
+\end_layout
+
+\begin_layout Enumerate
+Cantidad de información por entrada: 10 muestras por cada sujeto, aproximadament
+e 125 kb por cada uno.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Cantidad de información a almacenar: Se estima se almacenará entre 500 y
+ 1024 GB de información una vez se obtengan las muestras de toda la población
+ objetivo.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Salida de información: El sistema generará directorios nuevos con cada sujeto
+ que sea ingresado al sistema.
+\end_layout
+
+\begin_layout Section
+Policies and Regulations
+\end_layout
+
+\begin_layout Standard
+El funcionamiento del sistema será acorde a las políticas y regulaciones
+ de los distintos puestos de control donde sea utilizado.
+ Dicha información deberá ser proveída al equipo de trabajo durante el desarroll
+o del proyecto al menos 1 mes antes de su finalización para tomar las considerac
+iones que sean necesarias a la hora del desarrollo del mismo.
+ Si no se tiene información sobre las políticas y regulaciones disponibles,
+ se supondrá que el sistema puede funcionar a plenitud bajo los requerimientos
+ planteados sin incurrir en la violación de las mismas y no será culpa del
+ equipo de trabajo si llega a hacerlo.
+ 
+\end_layout
+
+\begin_layout Section
+System life cycle sustainment
+\end_layout
+
+\begin_layout Standard
+En términos de ciclo de vida del sistema, se puede referir a las actividades
+ de aseguramiento de calidad planteadas para el mismo dentro de las cuales
+ se encuentran:
+\end_layout
+
+\begin_layout Enumerate
+Evaluación de conformidad y aceptabilidad del SyRS 
+\end_layout
+
+\begin_layout Enumerate
+Evaluación de conformidad del diseño respecto a los requerimientos.
+\end_layout
+
+\begin_layout Enumerate
+Evaluación de conformidad de la implementación respecto al diseño.
+\end_layout
+
+\begin_layout Enumerate
+Evaluación de conformidad de la implementación respecto a los requerimientos.
+\end_layout
+
+\begin_layout Enumerate
+Cumplimiento de estándares (estándares de codificación, por ejemplo).
+\end_layout
+
+\begin_layout Enumerate
+Construcción y revisión de los tests unitarios, de integración y aceptación
+\end_layout
+
+\begin_layout Enumerate
+Cumplimiento de las actividades de ACS.
+\end_layout
+
+\begin_layout Standard
+Para mayor detalle se puede referir al documento de actividades de Aseguramiento
+ de la Calidad del Software.
+\end_layout
+
+\begin_layout Section
+Packaging, Handling and Transportation 
+\end_layout
+
+\begin_layout Standard
+El sistema será distribuido mediante un paquete de software por el equipo
+ de desarrollo del mismo.
+ Su distribución podrá ser realizada de forma remota o local dependiendo
+ del nivel de complejidad de instalación del sistema.
+ Las actualizaciones que se realicen de forma posterior se realizarán de
+ la misma manera.
+ Este aspecto estará sujeto a cambios a conveniencia tanto del equipo de
+ desarrollo como del responsable del producto y el cliente siempre y cuando
+ se llegue a un acuerdo del mismo.
+ 
+\end_layout
+
+\begin_layout Section
+Verification
+\end_layout
+
+\begin_layout Standard
+Se realizarán las siguientes formas de verificación para el cumplimiento
+ de los requerimientos planteados:
+\end_layout
+
+\begin_layout Enumerate
+Realización de pruebas de aceptación.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Pruebas unitarias y de integración, en términos de requerimientos del sistema
+ tanto funcionales como no funcionales.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Pruebas de sistema.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Pruebas de usabilidad.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Otras pruebas definidas en las actividades de aseguramiento de la calidad.
+ 
+\end_layout
+
+\begin_layout Section
+Assumptions and Dependencies 
+\end_layout
+
+\begin_layout Standard
+En el planteamiento de los requerimientos tanto funcionales como no funcionales
+ se tomaron en cuenta las siguientes suposiciones:
+\end_layout
+
+\begin_layout Enumerate
+Se cuenta con los recursos para implementar el sistema.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Los usuarios a ser ingresados en el sistema son el equivalente a todo habitante
+ del país elegible para salir y entrar al país.
+\end_layout
+
+\begin_layout Enumerate
+El sistema será implementado en todos los puntos fronterizos del país aún
+ con diferentes modalidades.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Se planea implementar distintos métodos de reconocimiento aparte del reconocimie
+nto facial.
+ 
+\end_layout
+
+\begin_layout Enumerate
+El equipo en el que se correrá el sistema podrá mantener los tiempos de
+ entrenamiento y ejecución constante una vez el sistema sea llevado a producción.
+ 
+\end_layout
+
+\begin_layout Section
+Validación de Diseño
+\end_layout
+
+\begin_layout Subsection
+Diagrama de clases
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\lang spanish
+
+\begin_inset Graphics
+	filename Image/image 1.png
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="2">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="6cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Clases (Ítemes)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Requerimiento asociado
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PuestoFronterizo, Entrenamiento, Reconocedor, RecolectorExploradorArchivos,
+ ReconocedorIris, ReconocedorDactilar, ReconocedorFacial, NormalizarEstandar,
+ NormalizarIluminacion, NormalizarDesplazamiento 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-01: Almacenamiento de muestras de diferentes personas
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PuestoFronterizo, GestorUsuario, GestorPersona, dtoPersona, PaginaAdministrador,
+ Persona, 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-02: Almacenamiento de datos personales de diferentes personas
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PuestoFronterizo, Reconocedor, RecolectorCamara, RecolectorExploradorArchivos,
+ ReconocedorFacial, IRecolector, IReconocible 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-03: Encontrar coincidencias entre los sujetos y sus rostros
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PuestoFronterizo, GestorPersona, Entrenamiento, NormalizarDesplazamiento,
+ NormalizarEstandar, NormalizarIluminacion, INormalizable
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-04: Capacidad de entrenar al sistema
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PaginaReconocedor, PaginaAdministrador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-05: Interfaz web
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+GestorUsuario, Usuario, TipoUsuario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-06: Manejo de diferentes usuarios que puedan ingresar al sistema
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ReconocedorIris
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-07: Reconocedor complementario de iris ocular
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ReconocedorDactilar
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-08: Reconocedor complementario de huella dactilar
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Diagrama de componentes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Image/pasted image 0.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang english
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="6cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Componentes (Ítemes)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Requerimiento asociado
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Carga de Imagenes, Ingreso de nuevos datos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-01: Almacenamiento de muestras de diferentes personas
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ingreso de nuevos datos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-02: Almacenamiento de datos personales de diferentes personas
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Identificación de sujetos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-03: Encontrar coincidencias entre los sujetos y sus rostros
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Carga de datos de entrenamiento, Entrenamiento
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-04: Capacidad de entrenar al sistema
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Frontend
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RF-05: Interfaz web
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

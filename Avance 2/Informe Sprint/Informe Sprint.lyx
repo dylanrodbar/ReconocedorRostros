@@ -1,0 +1,925 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+
+\size larger
+Tecnológico de Costa Rica
+\size default
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+Ingeniería en Computación
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+IC6831 -Aseguramiento de la Calidad del Software
+\end_layout
+
+\begin_layout Standard
+\align center
+Informe del Sprint
+\end_layout
+
+\begin_layout Standard
+\align center
+Profesor: Saúl Calderón Ramírez 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Estudiante: 
+\end_layout
+
+\begin_layout Standard
+\align center
+José Miguel Mora Rodríguez 
+\end_layout
+
+\begin_layout Standard
+\align center
+Dylan Rodríguez Barboza 
+\end_layout
+
+\begin_layout Standard
+\align center
+Karina Zeledón Pinell 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Octubre, 2017
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Verificación del estándar de codificación
+\end_layout
+
+\begin_layout Standard
+La herramienta seleccionada para la verificación del estándar de codificación
+ seleccionado es la que tiene integrada eclipse, la cual se especializa
+ en la verificación del estándar PEP8.
+\end_layout
+
+\begin_layout Subsection
+Instalación y verificación
+\end_layout
+
+\begin_layout Subsubsection
+Instalación
+\end_layout
+
+\begin_layout Standard
+Para habilitar la opción del estándar de codificación PEP8 en eclipse, se
+ deben seleccionar las siguientes opciones: Window >> Preferences >> PyDev
+ >> Editor >> Code Analysis >> pycodestyle.py(pep8) >> Warning.
+ Se ilustra con las siguientes capturas de pantalla: Window >> Preferences
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 0.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+PyDev
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 1.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Editor
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Code Analysis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 3.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez seleccionado Code Analysis, en la parte derecha de la pantalla deben
+ aparecer opciones como las siguientes: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 4.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seleccionar pycodestyle.py (pep8)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 5.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seleccionar Warning, luego, se deben aplicar los cambios:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 6.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Verificación
+\end_layout
+
+\begin_layout Standard
+En el ambiente de eclipse, una vez que se hayan seguido los pasos anteriormente
+ dados, se darán ciertas advertencias cada vez que se incumpla con el estándar
+ de codificación PEP8: Ejemplo de una advertencia que puede ser notificada
+ por el ambiente eclipse: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 7.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El objetivo que se tiene con esta implementación en eclipse es reducir al
+ máximo el número de advertencias, entre menos de estas se tenga, más se
+ cumplirá con el estándar de codificación.
+\end_layout
+
+\begin_layout Section
+Manual de Administración de la Configuración del Software
+\end_layout
+
+\begin_layout Subsection
+Acceso a las secciones del repositorio
+\end_layout
+
+\begin_layout Subsubsection
+Acceso al repositorio
+\end_layout
+
+\begin_layout Standard
+Para acceder a las secciones que ofrece el repositorio, se debe acceder
+ al siguiente enlace, el cual redirecciona al repositorio de nombre ReconocedorR
+ostros: https://github.com/dylanrodbar/ReconocedorRostros.Una vez seleccionado,
+ debe aparecer una pestaña en el navegador con el siguiente contenido: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 8.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y la siguiente introducción:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 9.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seguido de información acerca del sistema:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 10.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y un resumen de las secciones que ofrece:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 11.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El acceso a las diferentes secciones del repositorio se explicarán a continuació
+n
+\end_layout
+
+\begin_layout Subsubsection
+Acceso a los requerimientos del sistema
+\end_layout
+
+\begin_layout Standard
+Debajo de la introducción, se puede apreciar una sección dedicada a los
+ requerimientos del sistema, como se muestra a continuación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 12.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez seleccionado el enlace, se debe visualizar lo siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 13.png
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para acceder a los atributos de calidad, se debe seleccionar “Atributos
+ de calidad.pdf”, donde una vez hecho, se mostrará lo siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 14.png
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En donde basta con seleccionar el botón “Download” para descargar el archivo.
+ Deben seguirse los mismos pasos para descargar el SyRS: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 15.png
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una alternativa a los pasos mencionados anteriormente, es seguir los pasos
+ dados en el readme.md de la sección correspondiente al repositorio.
+\end_layout
+
+\begin_layout Subsubsection
+Acceso al diseño
+\end_layout
+
+\begin_layout Standard
+Debajo de la sección de los requerimientos del sistema (mencionado en la
+ sección anterior), se puede apreciar una sección dedicada al diseño, como
+ se muestra a continuación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 16.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez seleccionado el enlace mostrado, se deberá mostrar un contenido
+ como el siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 17.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para acceder al diagrama de clases, debe seleccionar el enlace “ModeloClases.png”.
+ Una vez hecho esto, se mostrará el siguiente contenido:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 18.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para descargarlo, es necesario seleccionar la opción “Download”, mostrada
+ en la imagen.
+ Se deben seguir los mismo pasos para obtener el diagrama de componentes:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 19.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una alternativa a los pasos mencionados anteriormente, es seguir los pasos
+ dados en el readme.md de la sección correspondiente al repositorio.
+\end_layout
+
+\begin_layout Subsubsection
+Acceso a la aplicación web
+\end_layout
+
+\begin_layout Standard
+Debajo de la sección de diseño presentada anteriormente, se muestra la sección
+ para el acceso a la aplicación web:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 20.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde una vez que se seleccione el enlace, se debe mostrar un contenido
+ como el siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 21.png
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para el acceso al código de cada script en esta sección, es preciso seleccionar
+ el script que se desee, seguidamente se le mostrará el contenido de este,
+ debido a que la aplicación web está desarrollada mediante el framework
+ django, el código que se verá, está implementado en python, html y css,
+ para mostrar de ejemplo, se seleccionará el script “Trozos.py”, del cual
+ se desplegará un contenido como el siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 22.png
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Descarga de todo el repositorio
+\end_layout
+
+\begin_layout Standard
+Se debe acceder al siguiente enlace: https://github.com/dylanrodbar/ReconocedorRo
+stros Una vez hecho esto, seleccionar la opción “clone and download”: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 26.png
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seguidamente se desplegará contenido como el siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 27.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seleccionar “Download ZIP” y seleccionar la carpeta en la que se quiera
+ descargar:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 28.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seguidamente se debe descomprimir el archivo.
+ Una vez hecho esto, se tendrá acceso a todos los archivos correspondientes
+ al repositorio.
+\end_layout
+
+\begin_layout Section
+Métricas Implementadas
+\end_layout
+
+\begin_layout Subsection
+Atributo de calidad: Comportamiento temporal
+\end_layout
+
+\begin_layout Subsubsection
+Métrica: tiempo de respuesta 
+\end_layout
+
+\begin_layout Itemize
+Requerimientos funcionales asociados con esta métrica: RF-03, encontrar
+ coincidencias entre los sujetos y sus rostros.
+ RF-04, capacidad de entrenar al sistema.
+ La relación principal que tiene con estos requerimientos es que se debe
+ medir el tiempo que tarda el sistema en satisfacer los mismos, para esto
+ se pretende utilizar una herramienta implementada en el lenguaje de programació
+n python, que se encarga de medir el tiempo de ejecución de una función
+ deseada.
+ 
+\end_layout
+
+\begin_layout Itemize
+Umbral: El tiempo de respuesta fijado como métrica para la clasificación
+ de cada sujeto fue de entre 5 y 10s.
+ El tiempo de entrenamiento fijado como métrica fue de menos de 2 minutos
+ por sujeto.
+ 
+\end_layout
+
+\begin_layout Itemize
+Herramienta seleccionada para medir: time de python, es una librería encargada
+ de medir el tiempo de ejecución de las funciones que se deseen, para esto,
+ se una una función llamada time(), que debe colocarse antes y después del
+ código encargado de ejecutar una función deseada.
+ Por ejemplo, en la imagen que ilustra a continuación, se notarán las líneas
+ de código encargadas de calcular el tiempo de ejecución (delimitadas por
+ ##).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 29.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Generará el siguiente resultado:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 30.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Implementación de la métrica
+\end_layout
+
+\begin_layout Standard
+Para un 80% de muestras como entradas para el entrenamiento(328 imágenes)
+ y el 20% restante como muestras a clasificar y calculando el 100% de los
+ autovectores se obtuvieron los siguientes resultados:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 31.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El tiempo de entrenamiento se refiere al tiempo llevado a cabo recibiendo
+ todas las muestras como entradas, ordenándose y realizando todos los cálculos
+ necesarios para obtener los centroides de los sujetos en el nuevo espacio
+ de autovectores.
+ El tiempo promedio de reconocimiento se refiere al tiempo en promedio que
+ tardó el sistema en la clasificación de los sujetos, tomando en cuenta
+ que del 100% de las muestras del sujeto se clasificaron 20%, en este caso,
+ de 10 muestras se clasificaron 2 (las muestras clasificadas no se encontraban
+ dentro de las de entrenamiento.) Se realizaron las medidas de tiempo utilizando
+ un 10% de los autovectores lo cual dió los siguientes resultados: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Img/pasted image 32.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lo cual refleja que a menor porcentaje de autovectores, mejor tiempo promedio
+ de ejecución.
+\end_layout
+
+\begin_layout Standard
+En conclusión en ambos casos se cumplieron los umbrales establecidos de
+ forma eficaz y eficiente.
+ 
+\end_layout
+
+\begin_layout Subsection
+Atributo de calidad: Instalabilidad
+\end_layout
+
+\begin_layout Subsubsection
+Métrica: facilidad de instalación
+\end_layout
+
+\begin_layout Itemize
+Requerimientos funcionales asociados con esta métrica: RF-01, almacenamiento
+ de muestras de diferentes personas.
+ RF-02, almacenamiento de datos personales de diferentes personas.
+ RF-03, encontrar coincidencias entre sujetos y sus rostros.
+ RF-04, capacidad de entrenar al sistema.
+ RF-05, interfaz web.
+ RF-06, manejo de diferentes usuarios que puedan ingresar al sistema.
+ RF-07, reconocedor complementario de iris ocular.
+ RF-08, reconocedor complementario de huella dactilar.
+ La relación principal que tiene con estos requerimientos es que todos deben
+ ser capaz de satisfacerse en diferentes entornos.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Implementación de la métrica 
+\end_layout
+
+\begin_layout Standard
+Utilización de un lenguaje de programación multiplataforma y la utilización
+ de un framework implementado en el mismo lenguaje que facilite la ejecución
+ de la misma en cualquier tipo de entorno.
+ Es decir, al utilizar un lenguaje de programación como python, y el uso
+ de un framework como django, el cual está implementado en python, se hace
+ viable ejecutar el sistema en cualquier ambiente de trabajo, incluyendo
+ diferentes sistemas operativos.
+ 
+\end_layout
+
+\begin_layout Section
+Especificación de pruebas unitarias
+\end_layout
+
+\begin_layout Standard
+En el presente sprint se implementaron seis pruebas unitarias tipo “pytest”,
+ las cuales son: 
+\end_layout
+
+\begin_layout Enumerate
+test_convertirMatrizAVector 
+\end_layout
+
+\begin_layout Enumerate
+test_crearMatrizDeVectores 
+\end_layout
+
+\begin_layout Enumerate
+test_cara_prom 
+\end_layout
+
+\begin_layout Enumerate
+test_auto_vectores 
+\end_layout
+
+\begin_layout Enumerate
+test_matriz_diferencias 
+\end_layout
+
+\begin_layout Enumerate
+test_normalizar
+\end_layout
+
+\begin_layout Standard
+Las primeras dos fueron implementadas en el POC por lo que no se especificarán
+ en este documento, sin embargo el resto presentan el siguiente comportamiento:
+\end_layout
+
+\begin_layout Subsubsection*
+Prueba a la función cara_prom 
+\end_layout
+
+\begin_layout Standard
+Entradas esperadas: Se espera que se reciba un conjunto de vectores sobre
+ los cuales se sacará su promedio, ejemplo: 
+\end_layout
+
+\begin_layout Itemize
+Vectores = [[11,10,4],[100,200,20]] 
+\end_layout
+
+\begin_layout Itemize
+Salida esperada = [25/3,320/3] 
+\end_layout
+
+\begin_layout Standard
+Caso Especial: Pruebas con vectores de magnitud 0, la salida debería ser
+ un vector de la misma dimensión de los vectores con magnitud 0.
+\end_layout
+
+\begin_layout Subsubsection*
+Prueba para la función auto_vectores 
+\end_layout
+
+\begin_layout Standard
+Entradas esperadas: Se espera recibir una matriz con vectores del tipo numpy.arra
+y.
+ A raíz de esta matriz se calculan los autovectores de la matriz la cual
+ la entrada corresponde a su matriz de diferencia.
+ Esta función depende ampliamente del comportamiento de la librería de numpy
+ por lo que su salida depende de esta librería.
+\end_layout
+
+\begin_layout Subsubsection*
+Prueba para la función matriz_diferencias
+\end_layout
+
+\begin_layout Standard
+Entradas esperadas: Se espera recibir una matriz con vectores del tipo numpy.arra
+y y un vector del tipo numpy.array.
+ Esta función depende ampliamente del comportamiento de la librería de numpy
+ por lo que su salida depende de esta librería.
+ Ejemplo: 
+\end_layout
+
+\begin_layout Itemize
+Vectores =[[1,2,3,4],[1,2,3,4]] 
+\end_layout
+
+\begin_layout Itemize
+Vector = [1,2,3,4] 
+\end_layout
+
+\begin_layout Itemize
+Salida esperada = [[0,0,0,0],[0,0,0,0]]
+\end_layout
+
+\begin_layout Subsubsection*
+Prueba para la función normalizar
+\end_layout
+
+\begin_layout Standard
+Entradas esperadas: Se espera recibir un vector.
+ La prueba unitaria de esta función consiste en comprobar si la forma en
+ que se normaliza el vector da como resultado un vector de magnitud igual
+ a uno.Esta función depende del comportamiento de la librería de numpy por
+ lo que su salida depende de esta librería.
+ 
+\end_layout
+
+\begin_layout Standard
+Ejemplo:
+\end_layout
+
+\begin_layout Itemize
+Entrada = np.linalg.norm(entrenamiento.normalizar([123.0032, 123.4,36.0043,3,0,345.19])
+)) == 1 
+\end_layout
+
+\begin_layout Itemize
+Salida: True 
+\end_layout
+
+\end_body
+\end_document
