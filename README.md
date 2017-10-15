@@ -39,3 +39,7 @@ En esta sección se podrán encontrar los scripts referentes a la aplicación we
 
 En esta sección se podrán encontrar los scripts referentes a las configuraciones de la aplicación web, puede ser visualizada mediante  [este enlace](https://github.com/dylanrodbar/ReconocedorRostros/tree/master/ReconocedorRostrosA)
 
+## Obtención del gestor de repositorios utilizado (GitKraken 3.1.1)
+
+Esta herramienta es utilizada para la gestión del repositorio, en este es posible ver los commit y distintos cambios en los código fuente del proyecto, además de quién realizó el commit, se puede obtener mediante [este enlace](https://www.gitkraken.com/) (Seleccione la versión para windows, específicamente)
+
