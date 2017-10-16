@@ -17,6 +17,8 @@ Para lograr instalar numpy en el entorno de python, debe abrirse el cmd de windo
 
 ## Implementación de Open CV 3.3.0
 
+Para lograr instalar opencv en el entorno de python, debe abrirse el cmd de windows y digitar el siguiente comando: **pip install opencv-python**
+
 
 ## Implementación de django 1.11.5
 
