@@ -1,0 +1,88 @@
+{% extends "Eigen/header.html" %}
+{% block content %}
+
+		<br>
+		<br>
+        <div class="container">
+		
+		
+		  <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+<fieldset>
+
+<!-- Form Name -->
+<legend>EigenFaces</legend>
+	<!-- Text input-->
+
+	<div class="form-group">
+	  <label class="col-md-2 control-label"></label>
+	  <div class="col-md-6 inputGroupContainer">
+	  
+				
+			  	
+				
+			   <div class="row">
+			   <div class="col-md-8">
+			   <div class="thumbnail">
+					{% load staticfiles %}
+					<img src="{% static 'home/img/profile.png' %}"  height="400" width="400" name="File" id="output"/>
+			   </div>
+			   </div>
+			   </div>
+			 
+			 <div class="col-md-8" align="center">
+			 
+				<label class="btn btn-default btn-file">
+                        <span class="glyphicon glyphicon-open-file"></span>
+                        <!-- The file is stored here. -->
+                        <input type="file" name="image-file" accept="image/*" onchange="loadFile(event)">
+                </label>
+				
+				<script>
+				  var loadFile = function(event) {
+					var output = document.getElementById('output');
+					output.src = URL.createObjectURL(event.target.files[0]);
+				  };
+				</script>
+			
+				
+				<a href="#" data-toggle="modal" data-target="#Sucess"><button type="submit" class="btn btn-default" > <span class="glyphicon glyphicon-camera"></span></button></a>
+				&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+				<a href="#" data-toggle="modal" data-target="#Sucess"><button type="submit" class="btn btn-primary" >Identificar <span class="glyphicon glyphicon-user"></span></button></a>
+			</div>
+	
+	  
+	</div>
+	
+
+	  
+	 
+	
+	</div>
+		
+	<!-- Modal Sucess-->
+	<div class="modal fade" id="Sucess" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+        				<button type="button" class="close" data-dismiss="modal">
+        					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+        				</button>
+        				<h3 class="modal-title" id="modal-login-label">Se proceso correctamente</h3>
+						
+						<p>Para mas informacion revisar el archivo .txt generado</p>
+						
+						
+						
+        			</div>
+        			
+        	
+        			
+      </div>
+      
+    </div>
+  </div>
+		
+		
+{% endblock %}
