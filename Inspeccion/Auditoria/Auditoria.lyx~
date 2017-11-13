@@ -1,0 +1,2551 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+
+\size larger
+Tecnológico de Costa Rica
+\size default
+ 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+Ingeniería en Computación
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+IC6831 -Aseguramiento de la Calidad del Software
+\end_layout
+
+\begin_layout Standard
+\align center
+Auditoría 1: basada en el estándar IEEE-1028-2008
+\end_layout
+
+\begin_layout Standard
+\align center
+Profesor: Saúl Calderón Ramírez 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\align center
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Estudiante: 
+\end_layout
+
+\begin_layout Standard
+\align center
+José Miguel Mora Rodríguez 
+\end_layout
+
+\begin_layout Standard
+\align center
+Dylan Rodríguez Barboza 
+\end_layout
+
+\begin_layout Standard
+\align center
+Karina Zeledón Pinell 
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Noviembre, 2017
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+En el presente documento se detalla un proceso de inspección que se realiza
+ al proyecto realizado por el equipo de trabajo que redacta este documento,
+ además, se detalla la auditoría hecha hacia otro grupo de trabajo, con
+ el fin de corregir errores o agregar elementos críticos en un documento
+ de obtención y análisis de requerimientos.
+ Para lograr esto, se hizo uso de listas de chequeos para comprobar que
+ todo se haya hecho de la mejor manera posible.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Inspección interna a proyecto
+\end_layout
+
+\begin_layout Subsection
+Propósito de la inspección
+\end_layout
+
+\begin_layout Standard
+El propósito de la inspección del propio proyecto, es intentar detectar
+ alguna anomalía o detectar alguna falta que este tenga, ya sea el no seguimient
+o de algún estándar o la mala estructuración de algún código fuente con
+ el que se haya trabajado.
+ Además, será útil para obtener información del software, de tal manera
+ que se pueda mejorar algún estándar o implementación ya hecha.
+ Entre los puntos que se quieren comprobar con esta inspección se encuentran:
+ 
+\end_layout
+
+\begin_layout Itemize
+Comprobar el uso de una herramienta para el manejo del estándar de codificación
+ seleccionado por el equipo.
+ 
+\end_layout
+
+\begin_layout Itemize
+Comprobar que el código estuviese debidamente comentado.
+ 
+\end_layout
+
+\begin_layout Itemize
+Comprobar si es posible simplificar algún algoritmo ya implementado.
+ 
+\end_layout
+
+\begin_layout Itemize
+Comprobar que el código no presente o pueda presentar un futuro bug.
+ 
+\end_layout
+
+\begin_layout Itemize
+Comprobar que haya pruebas de unidad para cada comportamiento del sistema
+ implementado.
+\end_layout
+
+\begin_layout Itemize
+Comprobar que las pruebas cubran las condiciones para que se de un error.
+ 
+\end_layout
+
+\begin_layout Itemize
+Comprobar que se manejan excepciones en caso de que hayan errores en los
+ parámetros.
+\end_layout
+
+\begin_layout Itemize
+Comprobar si se implementó un componente que se encargue de brindar información
+ relacionada con los errores.
+ 
+\end_layout
+
+\begin_layout Itemize
+Comprobar que las variables globales sean accedidas correctamente, de manera
+ que los datos no se corrompa en algún momento de la ejecución.
+\end_layout
+
+\begin_layout Itemize
+Comprobar que no hayan olores de software en el código.
+ 
+\end_layout
+
+\begin_layout Itemize
+Comprobar que no haya código de depuración (prints) en los programas que
+ se suponen completamente implementados.
+ 
+\end_layout
+
+\begin_layout Standard
+Estos son los puntos más importantes que se quieren comprobar, se tratarán
+ otros, específicamente en una sección a lo largo del documento que se encarga
+ del manejo de una lista de chequeo de la implementación del código.
+\end_layout
+
+\begin_layout Subsection
+Artefactos inspeccionados
+\end_layout
+
+\begin_layout Standard
+Los artefactos de implementación inspeccionados para el proyecto de reconocimien
+to de rostros fueron todos los archivos que contengan código fuente, en
+ los cuales la mayoría fueron implementados en el lenguaje de programación
+ python, además de estos, algunos también fueron implementados en html.
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="4">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="center" valignment="top" width="2.5cm">
+<column alignment="center" valignment="top" width="2.5cm">
+<column alignment="center" valignment="top" width="4cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sección del archivo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nombre del archivo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Programado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parte del repositorio en donde se encuentra
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Test.py
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Python
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Entra al repositorio: Test.py
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Test
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Test2.py
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Python
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Entra al repositorio: Test2.py
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Back-End
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Trozos.py
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Python
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Entra al repositorio: Trozos.py
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Back-End
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Trozos.py
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Python
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Entra al repositorio/reconocedor/ Trozos.py
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Back-End
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+urls.py
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Python
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Entra al repositorio/reconocedor/urls.py
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Back-End
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+views.py
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Python
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Entra al repositorio/reconocedor/ views.py
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Front-End
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+header.html
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Html
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Entra al repositorio/reconocedor/templates/ header.html
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Front-End
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+home.html
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Html
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Entra al repositorio/reconocedor/templates/ home.html
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Front-End
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+test.html
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Html
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Entra al repositorio/reconocedor/templates/ test.html
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Estándares seguidos por la organización inspeccionados
+\end_layout
+
+\begin_layout Standard
+El siguiente cuadro muestra los estándares utilizados en los archivos de
+ código:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="4cm">
+<column alignment="center" valignment="top" width="4cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Estándar
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Descripción de Estándar
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Elementos en cual se aplicó
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PEP8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PEP8 está dedicada a la recopilación de estándares seguidos por los desarrollado
+res de python para la librería estándar.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Codificación de los archivos de código (.py)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Javadocs
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Javadoc es una herramienta de documentación que define un formato estándar
+ para los comentarios, y que genera archivos HTML para ver la documentación
+ desde un navegador web.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Documentacion interna en los archivos de código (.py)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Lista de chequeo de Codificación
+\end_layout
+
+\begin_layout Standard
+A continuación se presentan los aspectos evaluados en torno a la codificación
+ del proyecto: 
+\end_layout
+
+\begin_layout Paragraph*
+Documentación 
+\end_layout
+
+\begin_layout Enumerate
+Se utiliza una herramienta para la verificación del estándar de codificación
+ interna 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Se utiliza el estándar de documentación “Javadocs”
+\end_layout
+
+\begin_layout Enumerate
+La evidencia se presentan dentro de los archivos fuentes de codificación.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Todos las funciones se encuentran debidamente comentados: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Se utiliza el estándar de codificación Javadocs con su debido formato.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+El código fuente incluye la etiqueta @autor: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+No se utiliza este formato debido al uso de la herramienta de administración
+ de configuración “Git”.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Se utiliza la etiqueta @version para definir el versionamiento del código:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Se define la versión una vez se encuentra lista en el repositorio.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Evidencia:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/image 0.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Se explica el funcionamiento de algoritmos complejos: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Se explican dentro de la documentación interna 
+\end_layout
+
+\begin_layout Enumerate
+Evidencia:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/image 1.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Las dependencias de librerías externas son son claramente establecidas 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Se utilizan las librerías numpy y OpenCV 
+\end_layout
+
+\begin_layout Enumerate
+Se hace referencia a las librerías y su versión en el respectivo repositorio
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Evidencia: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+https://github.com/dylanrodbar/ReconocedorRostros/tree/master/reconocedor
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+El código no depende de algún error en un framework externo el cual vaya
+ a ser arreglado posteriormente afectando el funcionamiento del sistema.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+No se ha utilizado ninguna función de las librerías externas la cual presente
+ algún error.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Se documentan las métricas utilizadas en la implementación.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Todas las métricas utilizadas se documentan en el SyRS del sistema.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Evidencia: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+https://github.com/dylanrodbar/ReconocedorRostros/blob/master/Avance%202/SyRS/
+ SyRS.pdf 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Paragraph*
+Testing
+\end_layout
+
+\begin_layout Enumerate
+Se incluyen pruebas unitarias las cuales comprueban el funcionamiento adecuado
+ de las funcionalidades implementadas.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Se implementan con la librería pytest.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Evidencia: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+https://github.com/dylanrodbar/ReconocedorRostros/blob/master/Test.py 
+\end_layout
+
+\begin_layout Enumerate
+https://github.com/dylanrodbar/ReconocedorRostros/blob/master/Test2.py 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Las pruebas unitarias cubren los posibles casos de error.
+ 
+\end_layout
+
+\begin_layout Enumerate
+No se codificaron algoritmos codificados previamente en otros API.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Se implementaron los algoritmos de PCA y KMeans sin utilizar APIs externos
+ con fines didácticos.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Se pueden reemplazar con la librería SciPy.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Asegurarse que las pruebas unitarias verifican la codificación contra los
+ requerimientos.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Los requerimientos del sistema son verificables a partir de pruebas de integraci
+ón y de sistema y no por las pruebas unitarias.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Paragraph*
+Manejo de Errores
+\end_layout
+
+\begin_layout Enumerate
+Se validan parámetros nulos de forma temprana en los métodos
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+No se validan los parámetros 
+\end_layout
+
+\begin_layout Enumerate
+La validación de los parámetros está programada para ser realizada en un
+ fecha posterior al Deadline de este documento, sin embargo al finalizar
+ el sprint actual se contará con dichas validaciones.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Se utilizan error handlers generales: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+No se utilizan 
+\end_layout
+
+\begin_layout Enumerate
+Se planean utilizar para el manejo de errores al finalizar el sprint.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Un error handler debe liberar de forma adecuada los recursos utilizados
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+No se utilizan error handlers.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+No se utilizan RuntimeException o Exception, o subclases para evadir modificar
+ el código con el fin de implementar un adecuado manejo de errores.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+No se utilizan este tipo de excepciones.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Se crean clases de manejo de Excepciones específicas a las excepciones que
+ pueda presentar el sistema.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+No se implementan.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Paragraph*
+Rendimiento
+\end_layout
+
+\begin_layout Enumerate
+Los objetos son duplicados solamente cuando son necesarios 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+No se implementa ninguna duplicación de objetos.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+No se implementan ciclos “busy-wait” en vez de técnicas apropiadas de sincroniza
+ción de threads.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+No se implementan threads.
+ 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+No se utilizan objetos de gran tamaño en memory o Strings los cuales contienen
+ archivos de gran tamaño.
+ Por ejemplo: No se guardan archivos XML en Strings o en el caso de imágenes
+ no se copian todas las que se vayan a utilizar en memoria antes de ser
+ utilizadas.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+En el sistema se maneja una gran cantidad de imágenes.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Las imágenes se procesan con la librería OpenCV.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Una vez procesada, la imagen es liberada de memoria.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Evidencia: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename img/image 2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+No hay código correspondiente a procesos de debugging 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Al finalizar el sprint actual no se encontrará código de este tipo 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+No hay impresiones a consola innecesarias 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Comentarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Al finalizar el sprint actual no se encontrará código de este tipo 
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+Artefactos corregidos
+\end_layout
+
+\begin_layout Standard
+Los artefactos que se corrigieron a lo largo del proceso de auditoria se
+ encuentra en el repositorio: https://github.com/dylanrodbar/ReconocedorRostros/I
+nspeccion
+\end_layout
+
+\begin_layout Section
+Auditoría a proyecto externo
+\end_layout
+
+\begin_layout Standard
+Se realizó una auditoría a un artefacto del proyecto del sistema de reconocedor
+ de rostros desarrollado por un grupo externo, a continuación se presentan
+ más detalles al respecto
+\end_layout
+
+\begin_layout Subsection
+Propósito de la auditoría
+\end_layout
+
+\begin_layout Standard
+El propósito de esta auditoría será proveer una evaluación de cómo se conforma
+ el producto de software del equipo al que se debe auditar, además de los
+ procesos que se aplican a estándares, regulaciones, planes, especificaciones
+ y procedimientos.
+ Para esta auditoría se evaluarán los requerimientos que recolectó la organizaci
+ón auditada.
+\end_layout
+
+\begin_layout Standard
+Entre los puntos que se quieren comprobar con esta inspección se encuentran:
+ 
+\end_layout
+
+\begin_layout Itemize
+Comprobar si hay una estructura adecuada para la recolección de requerimientos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Revisar estándares de SyRS y actividades usadas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Comprobar si se definen todos lo términos y unidades de medida.
+ 
+\end_layout
+
+\begin_layout Itemize
+Comprobar si cada requerimiento está descrito individualmente y con una
+ prioridad fijada.
+ 
+\end_layout
+
+\begin_layout Itemize
+Comprobar las referencias que hay entre los requerimientos.
+\end_layout
+
+\begin_layout Itemize
+Comprobar si todas las clases de usuario están debidamente descritas.
+ 
+\end_layout
+
+\begin_layout Itemize
+Comprobar si se definieron adecuadamente los atributos de calidad.
+\end_layout
+
+\begin_layout Standard
+Estos son los puntos más importantes que se quieren comprobar, se tratarán
+ otros, específicamente en una sección a lo largo del documento que se encarga
+ del manejo de una lista de chequeo de la recolección de requerimientos.
+\end_layout
+
+\begin_layout Subsection
+Organización auditada
+\end_layout
+
+\begin_layout Standard
+La organización auditada corresponde al grupo conformado por: 
+\end_layout
+
+\begin_layout Itemize
+Luis Alonzo Cascante Franco.
+ 
+\end_layout
+
+\begin_layout Itemize
+Olman Leivin Castillo Picado.
+\end_layout
+
+\begin_layout Itemize
+Maria Laura de Jesús Pizarro Moreno.
+ 
+\end_layout
+
+\begin_layout Itemize
+Gabriel Josué Venegas Castro.
+ 
+\end_layout
+
+\begin_layout Subsection
+Artefactos auditados
+\end_layout
+
+\begin_layout Standard
+Dentro de la auditoría se auditaron los siguientes ICS:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="4cm">
+<column alignment="center" valignment="top" width="4cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ICS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Descripción
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dirección del repositorio
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SyRS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Documento de requerimientos del proyecto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+https://github.com/ Hamdog28/ Asdecalidad-1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Atributos de Calidad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Documento con los atributos de calidad del estándar IEEE-730-2002 especificando
+ las métricas y umbrales de cumplimiento
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+https://github.com/ Hamdog28/ Asdecalidad-1/blob/master/1503897631- Atributos_de_
+Calidad_y_M%C3%A9tricas.pdf
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Estándares seguidos por la organización auditada
+\end_layout
+
+\begin_layout Standard
+Los siguientes estándares fueron seguidos por la organización auditada y
+ serán tomados en cuenta a la hora de realizar la auditoria correspondiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="4cm">
+<column alignment="center" valignment="top" width="4cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Estándar
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Descripción de Estánda
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Elementos en cual se aplico
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ISO-9126
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Establece un modelo de calidad y su uso como marco para la evaluación de
+ software, definiendo seis características.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Documento de especificación de los requerimientos del sistema (SyRS) 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IEEE-730-2002
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Este estándar establece los requisitos para iniciar, planificar, controlar
+ y ejecutar los procesos de Aseguramiento de calidad de software (ACS) de
+ un proyecto de desarrollo o mantenimiento de software.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Actividades de Aseguramiento de calidad
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IEEE-828-1998
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+El estándar IEEE 828 define la información mínima requerida para llevar
+ un Plan de Gestión de la Configuración del Software
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Plan de administración de la configuración
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PEP8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PEP8 está dedicada a la recopilación de estándares seguidos por los desarrollado
+res de python para la librería estándar.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Codificación de los archivos de código (.py)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Lista de chequeo 
+\end_layout
+
+\begin_layout Standard
+La siguiente lista fue utilizada para la auditoría del proyecto: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="25" columns="3">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="4cm">
+<column alignment="center" valignment="top" width="5cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Id del Ítem
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Descripción
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cumplimiento y observaciones
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se siguieron los estándares de documentación establecidos de forma correcta.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, se hizo una revisión del SyRS y se siguió el estándar fijado en el momento
+ (ISO/IEEE - 29148-2011), por ejemplo, se describió correctamente el propósito
+ del sistema, su alcance, definieron correctamente los requerimientos funcionale
+s, de manera que no se veían ambigüos, finalmente, definieron correctamente
+ las interfaces y operaciones del sistema.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se definen con claridad todas las métricas.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, se puede notar en la especificación de adaptabilidad y condiciones ambiental
+es definidos en el SyRS.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Todos los requerimientos cuentan con un nivel apropiado y consistente de
+ detalle.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Son entendibles, sin embargo, se pudo haber manejado una tabla en la que
+ se indique un poco más claro los casos que pueden ocurrir por cada requerimient
+o.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Los requerimientos poseen su respectiva descripción y nivel de prioridad.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, cada requerimiento tiene su respectiva descripción, en la cual se detalla
+ que debería hacer cada módulo del programa final.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se presentan las referencias cruzadas entre requerimientos.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, se puede evidenciar en las secciones de los requerimientos funcionales,
+ de usabilidad y de rendimiento.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se describen todos los tipos de usuarios.
+ Se describen las características de dichos usuarios.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, se puede evidenciar en la sección del alcance del sistema en el SyRS.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+La especificación incluye todas las necesidades de usuario o de sistema.
+ Se especifican todas las funcionalidades a ser utilizadas por los usuarios
+ del sistema.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, se puede evidenciar en las secciones de modos y estados del sistema
+ y las interfaces del sistema.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Los requerimientos funcionales especifican entradas, salidas y su debida
+ descripción de funcionalidad.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, en la sección de requerimientos funcionales se pueden apreciar las entradas
+ y salidas.
+ Sin embargo, como se mencionó en un punto anterior, con el uso de una tabla
+ sería más clara este tipo de información.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se especifican los requerimientos de documentación y entrenamiento de usuarios.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, se evidencia en la sección de la adaptabilidad de los requerimientos.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se especifican los entornos de ejecución del software.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí se especifican, se puede evidenciar en la sección de requerimientos de
+ usabilidad.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se especifica la forma de soporte y mantenimiento durante todo el ciclo
+ de vida del proyecto.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, se posee una sección que solamente se dedica a explicar el ciclo de
+ vida y mantenimiento del sistema.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se incluyen restricciones de diseño e implementación.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, en la sección de visión general del sistema se tiene un diagrama que
+ explica el MVC y un diagrama de casos de uso en la sección de modos y estados
+ del sistema.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se especifican requerimientos de seguridad.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, explican la seguridad según el tipo de usuario, como sugerencia se puede
+ añadir, de nuevo, el uso de tablas que permitan un mejor entendimiento
+ de lo que se explica.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se incluyen requerimientos de privacidad de datos.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No se incluyen, o no se especifican de manera separada en alguna sección.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se identifican requerimientos relacionados al rendimiento y comportamiento
+ temporal del sistema.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, se pueden encontrar en la sección de requerimientos del rendimiento
+ del SyRS de la organización auditada.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se especifican de forma apropiada todos los atributos de calidad.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, definieron un documento solamente dedicado a tratar los atributos de
+ calidad, en donde definieron cuánto peso tiene cada una y qué métricas
+ se aplicarían para cada caso.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+17
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No existen requerimientos duplicados ni conflictos entre los mismos.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, cada requerimiento era único, por lo que no podrían considerarse duplicados.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+18
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cada requerimiento tiene solo una intrepretacion
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, no hay ambigüedad en los requerimientos, fueron fáciles de interpretar,
+ sin embargo, como se ha mencionado antes, se recomienda que tengan los
+ requerimientos especificados mediante tablas, esto permite que se entienda
+ mejor.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+19
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Los requerimientos son verificables.
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, incluso definieron las maneras y programas utilizados para las pruebas,
+ destaca el unittest de python.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Se presentan criterios de aceptación medibles para los requerimientos tanto
+ funcionales como no funcionales.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, se definieron criterios de aceptación, es decir, los casos y resultados
+ deseables para cada módulo por implementar.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cada requerimiento presentan un identificador único.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, manejan los requerimientos por medio de un id único, por lo que cada
+ uno podrá ser ubicado mediante esta modalidad.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cada requerimiento es rastreable a su fuente.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, se incluyen capturas y manuales que permiten llegar a los entornos en
+ los que se desarrollan los requerimientos.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Todos los requerimientos se encuentran dentro del alcance del proyecto.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, no definieron ni más ni menos que lo definido en la sección del alcance
+ del sistema en el documento del SyRS de la organización auditada.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Los requerimientos no son ideas ni soluciones de diseño e implementación.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sí, son requerimientos únicamente, no se incluye un nivel más detallado
+ o de implementación, por lo que el objetivo es más entendible sin tener
+ que ir por conceptos técnicos.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Recomendaciones
+\end_layout
+
+\begin_layout Standard
+Las principales recomendaciones para la organización auditada son relacionadas
+ con el formato que le dieron a los documentos relacionados con la recolección
+ de los requerimientos y definición de atributos de calidad, entre los cuales
+ destacan: 
+\end_layout
+
+\begin_layout Itemize
+Se recomienda hacer uso de las tablas, con secciones significativas, de
+ esta forma, será más fácil su comprensión.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ampliar un poco más algunas explicaciones, a pesar de que la mayoría estuvo
+ presente en el documento, a algunos puntos le faltaron un poco de detalle,
+ tales como la sección de las interfaces del sistema.
+ 
+\end_layout
+
+\begin_layout Itemize
+Se recomienda agregar referencias bibliográficas de los estándares que sigan
+ para la realización de los documentos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Bibliografía
+\end_layout
+
+\begin_layout Enumerate
+IEEE.
+ (2008).
+ IEEE Standard for Software Reviews and Audits.
+ New York: IEEE
+\end_layout
+
+\end_body
+\end_document
