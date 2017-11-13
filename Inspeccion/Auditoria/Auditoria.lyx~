@@ -286,11 +286,6 @@ to de rostros fueron todos los archivos que contengan código fuente, en
 
 \begin_layout Standard
 \align center
-
-\end_layout
-
-\begin_layout Standard
-\align center
 \begin_inset VSpace bigskip
 \end_inset
 
@@ -1524,8 +1519,8 @@ Documento con los atributos de calidad del estándar IEEE-730-2002 especificando
 \begin_inset Text
 
 \begin_layout Plain Layout
-https://github.com/ Hamdog28/ Asdecalidad-1/blob/master/1503897631- Atributos_de_
-Calidad_y_M%C3%A9tricas.pdf
+https://github.com/ Hamdog28/ Asdecalidad-1/ blob/master/1503897631- Atributos_de
+_Calidad_y_M %C3%A9tricas.pdf
 \end_layout
 
 \end_inset
