@@ -6,7 +6,7 @@
         <div class="container">
 		
 		
-		  <form class="well form-horizontal" action="/action_page.php" method="post"  id="contact_form">
+		  <form class="well form-horizontal" action="/EigenFaces/trainerProc/" method="post"  id="contact_form" enctype="multipart/form-data">{% csrf_token %}
 			<fieldset>
 
 				<!-- Form Name -->
@@ -46,7 +46,7 @@
 						 <div class="form-group">
 							 <label class="control-label col-sm-2" for="email">Porcentaje de autovectores</label>
 								<div class="col-sm-6">
-								  <input type="number" required class="form-control" id="porcentaje" placeholder="0-100">
+								  <input type="number" required class="form-control" id="porcentaje" name= "porcentaje" placeholder="0-100">
 								</div>
 						</div>
 						
@@ -69,7 +69,7 @@
 						 
 								   <div class="fileinput fileinput-new input-group" data-provides="fileinput" >
 									<div class="form-control" data-trigger="fileinput"><i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
-									<span class="input-group-addon btn btn-primary btn-file"><span class="fileinput-new"><span class="glyphicon glyphicon-level-up"></span>  Seleccionar Carpeta</span><span class="fileinput-exists">Seleccionar Carpeta</span><input type="file" required name="file" webkitdirectory multiple ></span>
+									<span class="input-group-addon btn btn-primary btn-file"><span class="fileinput-new"><span class="glyphicon glyphicon-level-up"></span>  Seleccionar Carpeta</span><span class="fileinput-exists">Seleccionar Carpeta</span><input type="file"  name="file2" webkitdirectory multiple ></span>
 								   </div>
 								 
 								
@@ -85,7 +85,7 @@
 						 <div class="form-group">
 							 <label class="control-label col-sm-2" for="email">Cantidad de K-vecinos</label>
 								<div class="col-sm-6">
-								  <input type="number" required class="form-control" id="k_vecinos" placeholder="0-100">
+								  <input type="number" class="form-control" id="k_vecinos" placeholder="0-100">
 								</div>
 						</div>
 						

@@ -19,5 +19,7 @@ from . import views
 urlpatterns = [
     url(r'^$', views.inicio, name='inicio'),
     url(r'^reconocedor/', views.reconocedor, name='reconocedor'),
+    url(r'^reconocedorProc/', views.reconocedorProc, name='reconocedorProc'),
     url(r'^trainer/', views.trainer, name='trainer'),
+    url(r'^trainerProc/', views.trainerProc, name='trainerProc'),
 ]
